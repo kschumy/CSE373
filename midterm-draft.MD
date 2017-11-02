@@ -168,6 +168,7 @@
   ![alt text][sumof1ton]  
   - Sum of the powers of two
   - Sum of all the inverse of two
+  ![alt text][sumofinversepowersof2]
 
 ## :star: Asymptotic Analysis :star:
 - **Best-case, worst-case, average-case**  
@@ -467,3 +468,5 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 **[Back to top](#overview)**
 
 [sumof1ton]: https://github.com/kschumy/CSE373/raw/master/sumOfAllNumFrom1ToN.PNG
+
+[sumofinversepowersof2]: https://github.com/kschumy/CSE373/raw/master/sumOfInversePowersOf2.PNG

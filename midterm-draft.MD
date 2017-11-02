@@ -128,10 +128,9 @@
 **[Back to top :rocket:](#overview)**
 
 --------------------------
+--------------------------
 
 # STACKS AND QUEUES
-
---------------------------
 
 ## :star: Stack :star:
 - **Supports: push(), pop(), top()**

@@ -279,15 +279,15 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
   - Indicate the number of operations. (“Perform *n* insertions”). 
   - Determine how many costly operations there are and how many cheap operation there is there are.
     - The reason that this is important is because the answer depends on these two. If the array is full and has *n* elements and then we add *n* more (provided that we're doubling the size of the array), we can restrict the fact that there is exactly one costly operation, i.e. exactly one resize.
-  - Calculate...
+  - Calculate amortized analysis...
 ```
-(# of costly operations * costly runtime) + (# of cheap operations * cheap runtime)       total runtime
-―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――  =  ―――――――――――――――――― = amortized analysis
-                                # of operations                                           # of operations
+(# of costly operations * costly runtime) + (# of cheap operations * cheap runtime)     total runtime
+―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――  =  ―――――――――――――――
+                                # of operations                                         # of operations
 ```
 - **Imporant to note**
   - Amortized analysis is different than best case or worst case. It is a seperate type of analytical case.
-  - So far we've only seen examples where the cheap run time is constant, but be prepared for a non-constant cheap runtime on the midterm. Be able to apply the run times for that case. :warning:
+  - :triangular_flag_on_post: So far we've only seen examples where the cheap run time is constant, but be prepared for a non-constant cheap runtime on the midterm. Be able to apply the run times for that case. :triangular_flag_on_post:
 
 
 ## :star: Memory analysis :star:

@@ -3,7 +3,7 @@
 ## :star: Key :star:
 **:star: = section header (\##)**  
 **:small_blue_diamond: = subsection header (\###)**  
-**:heavy_plus_sign: = section header (\##) for topic not in study guide but possibly important**
+**:heavy_plus_sign: = section header (\##) for topic not in study guide/review lecture but possibly worth knowing for exam(??)**
 
 ## :star: Topics :star:
 - [Definitions](#definitions)
@@ -20,14 +20,15 @@
 - [Heaps](#heaps)
 
 ## :star: Exam Breakdown :star:
-**General Info**
+### :small_blue_diamond: General Info :small_blue_diamond:
 - 6-8 questions
 - Focus on topic covered in review, though anything covered is fair game
 - Time management is key
 - No writing code. Might have pseudocode like question 5 on the homework, where you’re give a problem and asked to walk through the solution (how how your algorithm finds the solution and be able to provide runtime analysis for it). 
 - Also might be given code to debug or calculate the runtime for it. 
 
-**Question-Specific**
+### :small_blue_diamond: Question-Specific :small_blue_diamond:
+- **ALSO SEE THE TOPICS BELOW FOR MORE INFO**
 - Q1 is short answer but will have many parts. 
   - It may be best to save this for last because each is time-consuming for a number of points they're worth individually.
   - Multiple questions in this, all with varying difficulty.
@@ -46,6 +47,8 @@
 - Priority Queues/Heaps
   - Percolate up, percolate down and represent in both tree and array form
   - Draw a tree with a bunch of insertions and then at the end produce the array form. 
+
+**[Back to top :rocket:](#overview)**
 
 --------------------------
 

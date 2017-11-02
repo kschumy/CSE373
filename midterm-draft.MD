@@ -163,34 +163,30 @@
   - Sum of time of each statement
 - **For loops and while statements**  
   - Count the number of times relevant code is executed
-  - Number of itera+ons ∗ Time for Loop Body    
-
-## :star: Important Summations :star: 
-Often important with [recurrance](#star-recurrences-star)
-
-### :small_blue_diamond: Sum of all numbers from 1 to n: **n(n+1)/2** :small_blue_diamond:
-  ![alt text][sumof1ton]  
-
-### :small_blue_diamond: Sum of the powers of two :small_blue_diamond: 
-[Lecture from 10/6](https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=ef17e934-0508-4b67-89c1-4f5cf8382a76) **start at about 40:00**
-  ![alt text][sumofpowersof2]  
-
-### :small_blue_diamond: Sum of all the inverse of two: **1**  
-  ![alt text][sumofinversepowersof2]
-  
-## :heavy_plus_sign: Review of Related(?) Things :heavy_plus_sign:
-- **Floor**
+  - Number of itera+ons ∗ Time for Loop Body  
+- **Floor** :heavy_plus_sign:
   - ⎣X⎦ = Floor function: the largest integer < X  
   - Examples:
     - ⎣2.7⎦ = 2 
     - ⎣−2.7⎦ = −3 
     - ⎣2⎦ = 2
-- **Ceiling**  
+- **Ceiling** :heavy_plus_sign:
   - ⎡X⎤ = Ceiling function: the smallest integer > X  
   - Examples:
     - ⎡2.3⎤ = 3 
     - ⎡−2.3⎤ = −2
     - ⎡2⎤ = 2
+
+## :star: Important Summations :star: 
+
+### :small_blue_diamond: Sum of all numbers from 1 to n: **n(n+1)/2** :small_blue_diamond:
+  ![alt text][sumof1ton]  
+
+### :small_blue_diamond: Sum of the powers of two :small_blue_diamond: 
+  ![alt text][sumofpowersof2]  
+
+### :small_blue_diamond: Sum of all the inverse of two: **1** :small_blue_diamond:
+  ![alt text][sumofinversepowersof2]
 
 ## :star: Asymptotic Analysis :star:
 - [Panopto of lecture on 10/9](https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c3a3d656-d56b-45ce-9c49-8c30e0dc99e2)

@@ -7,6 +7,8 @@
 **:question: = something I'm very confused about/don't know and need to learn**  
 **:heavy_plus_sign: = section header (\##) for topic not in study guide/review lecture but might be worth knowing for exam(??)**
 
+--------------------------
+
 ## :star: Topics :star:
 - [Definitions](#definitions)
 - [Stacks and Queues](#stacks-and-queues)
@@ -20,6 +22,8 @@
 - [B+-trees](#b+-trees)
 - [Priority Queues](##priority-queues-adt)
 - [Heaps](#heaps)
+
+--------------------------
 
 ## :star: Exam Breakdown :star:
 ### :small_blue_diamond: General Info :small_blue_diamond:
@@ -102,7 +106,9 @@
 - **Summary of ADT vs. Data Structures**
   - The ADT describes the methods provided and the behavior we expect from them.
   - The Data Structure is a theoretical arrangement of the data that supports the functionality of the ADT
-  
+
+--------------------------
+
 ## :heavy_plus_sign: Testingn :heavy_plus_sign: 
 - **Two primary types of testing**  
   - Black box
@@ -133,6 +139,8 @@
 - **LIFO order**
   - Last In, First Out
 
+--------------------------
+
 ## :star: Queue :star:
 - **Supports: enqueue(), dequeue(), front()**
   - enqueue(Object toInsert): adds to the queue
@@ -141,12 +149,16 @@
 - **FIFO order**
   - First In, First Out
 
+--------------------------
+
 ## :heavy_plus_sign: Why behavior is important :heavy_plus_sign:
 - **Stacks and Queues both support the same functions**
   - insert: push() and enqueue()
   - remove: pop() and dequeue()
   - peek: top() and front()
 - **This isn’t sufficient to distinguish them, their behavior is also a critical part of their ADT. FIFO v LIFO**
+
+--------------------------
 
 ## :star: Data structure choices :star:
 - Arrays and Linked Lists
@@ -185,6 +197,8 @@
     - ⎡−2.3⎤ = −2
     - ⎡2⎤ = 2
 
+--------------------------
+
 ## :star: Important Summations :star: 
 Name | Formula |
 ---- | --------- |
@@ -192,16 +206,22 @@ Name | Formula |
 **Sum of the powers of two** | ![alt text][sumofpowersof2]<br>See [Lecture from 10/6](https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=ef17e934-0508-4b67-89c1-4f5cf8382a76) - start at about 40:00 |
 **Sum of all the inverse of two = 1** | ![alt text][sumofinversepowersof2] |
 
+--------------------------
+
 ## :star: Asymptotic Analysis :star:
 - [Panopto of lecture on 10/9](https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c3a3d656-d56b-45ce-9c49-8c30e0dc99e2)
 - Once we get enough data structure, how does our behavior change?
 - **Best-case, worst-case, average-case.** Usually, we discuss worst-case complexity  
 - **If we increase the input size, how does the computation time change**  
 
+--------------------------
+
 ## :star: BigO notation :star:
 - **Upper bound for a given function  
 - **f(n) = O(g(n)) if there exists a c and n₀ for which f(n) < c\*g(n) for all n > n₀** 
 - Must **mathmatically prove** the c and n₀ are sufficent. How to do this: start with some algebraic fact and perform mutations on it in order to get something in this form. 
+
+--------------------------
 
 ## :star: Recurrences :star:
 **:question: this whole section :question:**
@@ -276,10 +296,14 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
   - Rather than saying T(n) = c₀ + n * c₁ + T(n-1), we can observe that c₀ + n * c₁ is in O(n)
   - Simplify to T(n) = O(n) + T(n-1)
 
+--------------------------
+
 ## :heavy_plus_sign: Master theorem :heavy_plus_sign:
 - These recurrences all follow a similar pattern
 - Therefore, if you can produce a recurrence, there is actually a procedural way to produce solutions
 - If T(n) = a * T(n / b) + nᶜ for n > n₀ and **if the base case is a constant**  
+
+--------------------------
 
 ## :star: Amortized analysis :star:
 - **Used when an expensive operation occurs with predictable frequency (e.g. resizing an array)**  
@@ -298,10 +322,14 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
   - Amortized analysis is different than best case or worst case. It is a seperate type of analytical case.
   - So far we've only seen examples where the cheap run time is constant, but be prepared for a non-constant cheap runtime on the midterm. Be able to apply the run times for that case. :triangular_flag_on_post:
 
+--------------------------
+
 ## :star: Memory analysis :star: :question:
 - **Calculating how much memory an algorithm needs**, not for a data structure. **This is in addition to the data itself.** So if we have are data stored in AVL tree and we want to see how much memory it takes to do a recursive find, we don't include the data structure itself. 
 - **Think about any secondary data structures you might use.**  If you have a queue and you're doing a breadth first search traversal, the Q is a secondary data structure that the algorithm itself requires. You want to consider how that data structure might be used, when it will be most full, and what elements are going to be in there.
 - **Also, remember that recursive functions consume memory on the call stack.**  When you have a recursive function, every time you call that recursive function you add another block on to the call stack. This consumes memory there, thus consuming extra memory. 
+
+--------------------------
 
 ## :star: Basic Idea :star:
 - If we increase the size of the input by one, how does our total computation change?
@@ -351,6 +379,8 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
   - All keys are unique, i.e. each key only has one value
 - https://algs4.cs.princeton.edu/32bst/
 
+--------------------------
+
 ## :star: BSTs Height and Node Count :star:
 - Height of an empty tree = -1. Height of a single node = 0. 
 - Height = 1 + max(height(left),height(right)) 
@@ -366,6 +396,8 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - For a BST with n nodes inserted in arbitrary order 
   - Average height is O(log N)
   - Worst case height is O(N)
+
+--------------------------
 
 ## :star: BSTs Analysis :star:
 - Find()
@@ -425,6 +457,8 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Insert O(log n) :triangular_flag_on_post: will be expected to insert like in all the practice problems
 - If given the height, what are the min and max number of nodes? :question:
 
+--------------------------
+
 ## :star: AVL Rotations :star:
 - AVL Rotations occur when an insertion makes a node out of balance
 - The rotations are relative to the node that is unbalanced, there are four rotations depending on which grandchild received the new node.
@@ -455,6 +489,8 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
     - Secondary Hashing
   2. Chaining
 
+--------------------------
+
 ## :star: Probing :star:
 
 ### :small_blue_diamond: Linear probing :small_blue_diamond: 
@@ -474,6 +510,8 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Need to be careful, possible for infinite loops with a very empty array
 - If the secondary hash value and the table size are coprime (they share no factors), then secondary hashing will succeed if there is an open space
 - If table size is prime, only need to check if hash is a multiple
+
+--------------------------
 
 ## :star: Chaining :star:
 - Rather than probing for an open position, we could just save multiple objects in the same position
@@ -508,6 +546,8 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Signposts must have at least M/2 pointers and leaves must have at least L/2 data points, unless it is the root
 - Keys in signposts are the smallest item in the next pointer
 
+--------------------------
+
 ## :star: Insert :star:
 - Find the leaf that should hold the inserted element
 - Insert the new k,v pair in sorted order in the leaf node
@@ -527,6 +567,8 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Data is stored in priority, value pairs
 - In this class, we use the min-heap, where a lower value means it should dequeue first
 - https://algs4.cs.princeton.edu/24pq/
+
+--------------------------
 
 ## :star: Data Structure :star:
 
@@ -564,6 +606,8 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - ChangePriority: O(log n)
 - buildHeap, O(n)
 
+--------------------------
+
 ## :star: Percolate :star:
 
 ### :small_blue_diamond: Percolate up :small_blue_diamond: 
@@ -577,6 +621,8 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Compare the current node against both of its children
 - Swap the node with the smaller child provided the child is still smaller than the parent
 - Continue until the node is smaller than both children, or it is a leaf.
+
+--------------------------
 
 ## :star: Floyd’s method :star:
 - For each element in the array from size/2 to the first element

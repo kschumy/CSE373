@@ -281,11 +281,13 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
     - The reason that this is important is because the answer depends on these two. If the array is full and has *n* elements and then we add *n* more (provided that we're doubling the size of the array), we can restrict the fact that there is exactly one costly operation, i.e. exactly one resize.
   - Calculate...
 ```
-(# of costly operations * costly runtime) + (# of cheap operations * cheap runtime)     total runtime of operations
-―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――  =  ―――――――――――――――――――――――――― = Amortized analysis
-                                # of operations                                              # of operations
+(# of costly operations * costly runtime) + (# of cheap operations * cheap runtime)       total runtime
+―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――  =  ―――――――――――――――――― = amortized analysis
+                                # of operations                                           # of operations
 ```
-Anna ties is different than best case or worst case. It is a different type of Analytical kibble case. also so far we've only seen examples where the cheap run time is constant, but be prepared for there should be a non at constant sheep run time on the midterm. Be able to apply the run times for that case. 
+- **Imporant to note**
+  - Amortized analysis is different than best case or worst case. It is a seperate type of analytical case.
+  - So far we've only seen examples where the cheap run time is constant, but be prepared for a non-constant cheap runtime on the midterm. Be able to apply the run times for that case. :warning:
 
 
 ## :star: Memory analysis :star:

@@ -164,8 +164,8 @@
   - Count the number of times relevant code is executed
   - Multiply opperations
 - **Important summations**
-  - Sum of all numbers (powers??) from 1 to n
-  
+  - Sum of all numbers (powers??) from 1 to n  
+  ![alt text][sumof1ton]  
   - Sum of the powers of two
   - Sum of all the inverse of two
 
@@ -466,4 +466,4 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 
 **[Back to top](#overview)**
 
---------------------------
+[sumof1ton]: https://github.com/kschumy/CSE373/raw/master/sumOfAllNumFrom1ToN.PNG

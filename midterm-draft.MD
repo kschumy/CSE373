@@ -3,8 +3,8 @@
 ## :star: Key :star:
 **:star: = section header (\##)**  
 **:small_blue_diamond: = subsection header (\###)**  
-**:triangular_flag_on_post: = something that was strongly emphasized as important or tricky**
-**:question: = something I'm very confused about/don't know and need to learn**
+**:triangular_flag_on_post: = something that was strongly emphasized as important or tricky**  
+**:question: = something I'm very confused about/don't know and need to learn**  
 **:heavy_plus_sign: = section header (\##) for topic not in study guide/review lecture but might be worth knowing for exam(??)**
 
 ## :star: Topics :star:
@@ -350,7 +350,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Height = 1 + max(height(left),height(right)) 
 - With each increase in height, the number of nodes in a tree roughly doubles. This is where we start to get *log n* behavoir
 - Roughly half of a binary search tree are leaves
-- For a BST of height h:
+- For a BST of height h: :question: is this section correct?
   - max # of leaves: 2ʰ ← perfect tree
   - max # of nodes: 2ʰ⁺¹ - 1 ← perfect tree 
   - max # of internal nodes: 2ʰ - 1 ← perfect tree
@@ -387,6 +387,8 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 
 # TRAVERSALS
 
+:question: this whole section :question:
+
 ## :star: Two main traversal families :star:
 
 ### :small_blue_diamond: Depth First Search (DFS) :small_blue_diamond:
@@ -412,13 +414,15 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Still must implement binary search
 - Nodes in AVL trees have two extra fields: height and balance
 - Trees with this condition still have O(log n) height
-- No covering delete in this course
+- No covering delete in this course. But know that lazy deletion is a thing (make a node as deleted and come back to it later) - log n 
 - Find: O(log n)
-- Insert O(log n)
+- Insert O(log n) :triangular_flag_on_post: will be expected to insert like in all the practice problems
+- If given the height, what are the min and max number of nodes? :question:
 
 ## :star: AVL Rotations :star:
 - AVL Rotations occur when an insertion makes a node out of balance
-- Relative to the node that is unbalanced, there are four rotations depending on which grandchild received the new node.
+- The rotations are relative to the node that is unbalanced, there are four rotations depending on which grandchild received the new node.
+- Four types of rotations (all are relative to the node that is unbalanced, there are four rotations depending on which grandchild received the new node.
 - Left-left and right-right rotations involve the child of the affected node being rotated up into position
 - Left-right and right-left rotations involve the grandchild being rotated up into position. The grandparent and parent become the two children
 - It is important that these rotations preserve BST property

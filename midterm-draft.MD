@@ -24,8 +24,8 @@
 - 6-8 questions
 - Focus on topic covered in review, though anything covered is fair game
 - Time management is key
-- No writing code. Might have pseudocode like question 5 on the homework, where you’re give a problem and asked to walk through the solution (how how your algorithm finds the solution and be able to provide runtime analysis for it). 
-- Also might be given code to debug or calculate the runtime for it. 
+- No writing code. Might have pseudocode like question 5 on the homework, where you're given a problem and asked to walk through the solution (how your algorithm finds the solution and be able to provide runtime analysis for it). 
+- Also, might be given code to debug or calculate the runtime for it. 
 
 ### :small_blue_diamond: Question-Specific :small_blue_diamond:
 - ALSO SEE THE TOPICS BELOW FOR MORE INFO  
@@ -163,7 +163,7 @@
   - Sum of time of each statement
 - **For loops and while statements**  
   - Count the number of times relevant code is executed
-  - Number of itera+ons ∗ Time for Loop Body	
+  - Number of itera+ons ∗ Time for Loop Body    
 - **Important summations**
   - Sum of all numbers from 1 to n: **n(n+1)/2**  
   ![alt text][sumof1ton]  
@@ -188,14 +188,14 @@
 
 ## :star: Asymptotic Analysis :star:
 - [Panopto of lecture on 10/9](https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c3a3d656-d56b-45ce-9c49-8c30e0dc99e2)
-- We care about how behavior chang
-**Best-case, worst-case, average-case**  
-- **Usually we discuss worst-case complexity**  
+- Once we get enough data structure, how does our behavior change?
+- **Best-case, worst-case, average-case.** Usually, we discuss worst-case complexity  
 - **If we increase the input size, how does the computation time change**  
 
 ## :star: BigO notation :star:
-- **Upper bound for a given function**  
-- **f(n) = O(g(n) if there exists a c and n0 for which f(n) < c\*g(n) for all n > n0**  
+- **Upper bound for a given function  
+- **f(n) = O(g(n)) if there exists a c and n₀ for which f(n) < c\*g(n) for all n > n₀** 
+- Must math matically prove the c and n₀ are sufficent.
 
 ## :star: Recurrences :star:
 ### :small_blue_diamond: Steps :small_blue_diamond:
@@ -341,7 +341,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 ## :star: Properties :star:
 - Specific type of binary search tree
 - Still must implement binary search
-- Nodes in AVL trees have two extra fields, height and balance
+- Nodes in AVL trees have two extra fields: height and balance
 - Balance = | height(left) – height(right) |
 - Balance for each node must be less than or equal to 1
 - Trees with this condition still have O(log n) height

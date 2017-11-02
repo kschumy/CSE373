@@ -3,7 +3,9 @@
 ## :star: Key :star:
 **:star: = section header (\##)**  
 **:small_blue_diamond: = subsection header (\###)**  
-**:heavy_plus_sign: = section header (\##) for topic not in study guide/review lecture but possibly worth knowing for exam(??)**
+**:triangular_flag_on_post: = something that was strongly emphasized as important or tricky**
+**:question: = something I'm very confused about/don't know and need to learn**
+**:heavy_plus_sign: = section header (\##) for topic not in study guide/review lecture but might be worth knowing for exam(??)**
 
 ## :star: Topics :star:
 - [Definitions](#definitions)
@@ -40,7 +42,7 @@
 - AVL
   - Given an input sequence, have to insert into the AVL tree, and show each time there is a rotation
   - Show work for partial credit
-  - Check to make sure final tree is actually an AVL tree (i.e. balanced and a BST)
+  - Check to make sure final tree is actually an AVL tree (i.e. balanced and a BST) :triangular_flag_on_post:
   - Not expected to do deletion, but lazy deletion might show up on the short answer. (Same goes for B+-Trees)
 - Hash tables
   - Insert using linear probing, quadratic probing, secondary hashing, and chaining
@@ -196,8 +198,9 @@ Name | Formula |
 - Must **mathmatically prove** the c and n₀ are sufficent. How to do this: start with some algebraic fact and perform mutations on it in order to get something in this form. 
 
 ## :star: Recurrences :star:
+**:question: this whole section :question:**
 
-### :small_blue_diamond: Steps :small_blue_diamond:  
+### :small_blue_diamond: Steps :small_blue_diamond: 
 1. Analysis of recursive functions  
 2. Break the function into recursive and non-recursive  
 3. Produce the recurrence relation (i.e. T(n))  
@@ -287,22 +290,23 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 ```
 - **Imporant to note**
   - Amortized analysis is different than best case or worst case. It is a seperate type of analytical case.
-  - :triangular_flag_on_post: So far we've only seen examples where the cheap run time is constant, but be prepared for a non-constant cheap runtime on the midterm. Be able to apply the run times for that case. :triangular_flag_on_post:
+  - So far we've only seen examples where the cheap run time is constant, but be prepared for a non-constant cheap runtime on the midterm. Be able to apply the run times for that case. :triangular_flag_on_post:
 
-
-## :star: Memory analysis :star:
-- **Calculating how much memory an algorithm needs**  
-- **This is in addition to the data itself**  
-- **Think about any secondary data structures you might use**  
-- **Also, remember that recursive functions consume memory on the call stack**  
+## :star: Memory analysis :star: :question:
+- **Calculating how much memory an algorithm needs**, not for a data structure. **This is in addition to the data itself.** So if we have are data stored in AVL tree and we want to see how much memory it takes to do a recursive find, we don't include the data structure itself. 
+- **Think about any secondary data structures you might use.**  If you have a queue and you're doing a breadth first search traversal, the Q is a secondary data structure that the algorithm itself requires. You want to consider how that data structure might be used, when it will be most full, and what elements are going to be in there.
+- **Also, remember that recursive functions consume memory on the call stack.**  When you have a recursive function, every time you call that recursive function you add another block on to the call stack. This consumes memory there, thus consuming extra memory. 
 
 ## :star: Basic Idea :star:
 - If we increase the size of the input by one, how does our total computation change?
-- O(1): Input size has no effect on runtime
-- O(log n): doubling the input increases the runtime by some constant amount
-- O(n): linear time, each additional input increases execution time by a constant amount
-- O(n²): doubling the input increases the runtime by a factor of 4.
-- O(2ⁿ): exponential, increasing the input by one doubles the runtime
+- Expect these and ideas related to them in the short answer section.
+- Timetime families
+  - O(1): Input size has no effect on runtime
+  - **O(log n)**: doubling the input increases the runtime by some constant amount
+  - O(n): linear time, each additional input increases execution time by a constant amount
+  - **O(n²)**: doubling the input increases the runtime by a factor of 4.
+    - Be able to described in a meaningful way how the runtime changes, specifically that to double the input increases the runtime by a factor of 4.
+  - O(2ⁿ): exponential, increasing the input by one doubles the runtime
 
 **[Back to top :rocket:](#overview)**
 
@@ -310,15 +314,16 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 
 # DICTIONARIES
 
-## :star: Functions :star:
-- **Insert(key k, value v)**
-- **find(key k)**
-- **delete(key k)**
-
-## :star: Additional Properties :star:
-- Data is stored in key, value pairs
-- In this course, duplicate keys are not allowed
-- Most data structures can implement a dictionary
+## :star: Properties of Dictionaries :star:
+- **Operations**
+  - insert(key k, value v): inserts the key, value pair into the dictionary. Overwrites the old value if the key is already in the dictionary.
+  - find(key k): returns the stored value for a particular key in the dictionary, returns null if not found.
+  - delete(key k): removes the key, value pair denoted by the key from the dictionary.
+- **Additional Properties**
+  - Data is stored in key, value pairs
+  - In this course, duplicate keys are not allowed
+  - Most data structures can implement a dictionary.
+  - Differs from sets, which have no values and only cares if a key is present or not. Though set also and ADT and has find, insert and delete.
 
 **[Back to top :rocket:](#overview)**
 
@@ -326,13 +331,21 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 
 # BSTs
 
-## :star: Properties :star:
-- Binary trees
-- Nodes with two children
+## :star: BSTs Properties :star:
+- Binary trees, where each node has at most two children
+- All, subtrees must also be binary search trees
 - Maintains search property
-  - All values in the left subtree must be less than the parent
-  - All values in the right subtree must be greater than the parent
-- With each increase in height, the number of nodes in a tree roughly doubles
+  - All values (which are keys) in the left subtree must be less than the parent
+  - All values (which are keys) in the right subtree must be greater than the parent
+- All, subtrees must also be binary search trees
+- With this property, all binary search trees have sorted in-order traversals. 
+- Predecessor = the element just before it in sorted order.  
+  Successor = the element just after it in sorted order.
+- https://algs4.cs.princeton.edu/32bst/
+
+## :star: BSTs Height and Node Count:star:
+- Height = 1 + max(height(left),height(right)) 
+- With each increase in height, the number of nodes in a tree roughly doubles. Log
 - A perfect tree has 2<sup>h+1</sup> -1 nodes 
 - Roughly half of a binary search tree are leaves
 - https://algs4.cs.princeton.edu/32bst/

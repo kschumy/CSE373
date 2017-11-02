@@ -66,6 +66,8 @@
   - Dictionary (i.e. map) 
     - Supports functions: insert, find, delete
 
+--------------------------
+
 ## :star: Data Structure :star:
 - **Language independent structure which implements an ADT**  
 - **Can be analyzed asymptotically**  
@@ -78,11 +80,15 @@
   - B Trees (i.e. B+ Trees)  
   - Heaps
 
+--------------------------
+
 ## :star: Implementation :star:
 - **Low-level design decisions**
   - Example: when using a heap, do we use 0 indexing or 1 indexing? [Answer](#small_blue_diamond-implementation-small_blue_diamond)
 - **Language specific**
   - It doesn't change asymptotic performance, but it is language specific design decisions that we can make. 
+
+--------------------------
 
 ## :star: Summary/Other Relevant Info :star:
 - **Know the different levels**

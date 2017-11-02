@@ -5,14 +5,6 @@
 **:small_blue_diamond: = subsection header (\###)**  
 **:heavy_plus_sign: = section header (\##) for topic not in study guide but possibly important**
 
-## :star: Exam Breakdown :star:
-- 6-8 questions
-- Q1 is short answer, but will have many parts. It may be best to save this for last
-- Q2 is algorithm analysis
-- AVL
-- Hash tables
-- Priority Queues/Heaps
-
 ## :star: Topics :star:
 - [Definitions](#definitions)
 - [Stacks and Queues](#stacks-and-queues)
@@ -26,6 +18,34 @@
 - [B+-trees](#b+-trees)
 - [Priority Queues](##priority-queues-adt)
 - [Heaps](#heaps)
+
+## :star: Exam Breakdown :star:
+**General Info**
+- 6-8 questions
+- Focus on topic covered in review, though anything covered is fair game
+- Time management is key
+- No writing code. Might have pseudocode like question 5 on the homework, where you’re give a problem and asked to walk through the solution (how how your algorithm finds the solution and be able to provide runtime analysis for it). 
+- Also might be given code to debug or calculate the runtime for it. 
+
+**Question-Specific**
+- Q1 is short answer but will have many parts. 
+  - It may be best to save this for last because each is time-consuming for a number of points they're worth individually.
+  - Multiple questions in this, all with varying difficulty.
+  - Might include an equation of a recurrence.
+- Q2 is algorithm analysis
+  - Just like problem 2 on the homework, meaning you will be given some code and need to provide bigO bound
+  - Expect for loops and recursion
+  - Show work for partial credit
+- AVL
+  - Given an input sequence, have to insert into the AVL tree, and show each time there is a rotation
+  - Show work for partial credit
+  - Check to make sure final tree is actually an AVL tree (i.e. balanced and a BST)
+  - Not expected to do deletion, but lazy deletion might show up on the short answer. (Same goes for B+-Trees)
+- Hash tables
+  - Insert using linear probing, quadratic probing, secondary hashing, and chaining
+- Priority Queues/Heaps
+  - Percolate up, percolate down and represent in both tree and array form
+  - Draw a tree with a bunch of insertions and then at the end produce the array form. 
 
 --------------------------
 
@@ -65,20 +85,21 @@
   - The Data Structure is a theoretical arrangement of the data that supports the functionality of the ADT
   
 ## :heavy_plus_sign: Testing  (not on study guide) :heavy_plus_sign: 
-- **Two primary types of testing**
-  - Black box
-    - Behavior only, no peeking into the code
-    - This usually tests ADT behavior
-    - Can test performance/efficiency by using a timer
-  - White box (or clear box)
-    - Where there is an understanding of the implementation that can be leveraged for testing
-    - If you’re writing your own DS, you can peek into attributes that you would normally refuse access to the client
-- **Good things to test**
-  - Expected behavior (at multiple sizes)
-  - Forbidden input
-  - Empty/Null
-  - Side effects
-  - Boundary/Edge Cases
+**Two primary types of testing**  
+1. Black box
+  - Behavior only, no peeking into the code
+  - This usually tests ADT behavior
+  - Can test performance/efficiency by using a timer
+ 2. White box (or clear box)
+  - Where there is an understanding of the implementation that can be leveraged for testing
+  - If you’re writing your own DS, you can peek into attributes that you would normally refuse access to the client  
+
+**Good things to test**
+- Expected behavior (at multiple sizes)
+- Forbidden input
+- Empty/Null
+- Side effects
+- Boundary/Edge Cases
 
 **[Back to top](#overview)**
 
@@ -209,7 +230,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - **Describe the state of the data structure**  
 - **Indicate the number of operations**  
 - **Determine how many are the costly operation and how many are the cheap operations**  
-- **```# of costly * costly runtime + # cheap * cheap runtime```**  
+- **# of costly * costly runtime + # cheap * cheap runtime**  
 - **Divide by the number of operations**  
 
 ## :star: Memory analysis :star:
@@ -237,7 +258,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - **find(key k)**
 - **delete(key k)**
 
-## :star: Additional Properities :star:
+## :star: Additional Properties :star:
 - Data is stored in key, value pairs
 - In this course, duplicate keys are not allowed
 - Most data structures can implement a dictionary
@@ -258,7 +279,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - A perfect tree has 2<sup>h+1</sup> -1 nodes 
 - Roughly half of a binary search tree are leaves
 
-**[Back to top](#exam-breakdown)**
+**[Back to top](#overview)**
 
 --------------------------
 
@@ -296,7 +317,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 ## :star: AVL Rotations :star:
 - AVL Rotations occur when an insertion makes a node out of balance
 - Relative to the node that is unbalanced, there are four rotations depending on which grandchild received the new node.
-- Left-left and right right rotations involve the child of the affected node being rotated up into position
+- Left-left and right-right rotations involve the child of the affected node being rotated up into position
 - Left-right and right-left rotations involve the grandchild being rotated up into position. The grandparent and parent become the two children
 - It is important that these rotations preserve BST property
 
@@ -306,7 +327,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 
 # HASH TABLES
 
-## :star: Properities :star:
+## :star: Properties :star:
 - A large data set M with a smaller set that should be saved, D
 - A hash function maps M onto D
   - It should run in O(1) time
@@ -352,7 +373,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 
 --------------------------
 
-# MEMORY HEIRARCHY
+# MEMORY HIERARCHY
 
 ## :star: Memory is not uniformly accessible :star:
 - OS manages access to computer resources

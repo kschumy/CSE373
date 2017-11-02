@@ -78,7 +78,7 @@
 
 ## :star: Implementation :star:
 - **Low-level design decisions**
-  - Example: when using a heap, do we use 0 indexing or 1 indexing? :question:
+  - Example: when using a heap, do we use 0 indexing or 1 indexing?
 - **Language specific**
   - It doesn't change asymptotic performance, but it is language specific design decisions that we can make. 
 
@@ -160,18 +160,37 @@
 ## :star: Basics :star:
 - **Counting the number of operations**  
   - Comparisons, mathematical operations, assignments 
+  - Sum of time of each statement
 - **For loops and while statements**  
   - Count the number of times relevant code is executed
-  - Multiply opperations
+  - Number of itera+ons ∗ Time for Loop Body	
 - **Important summations**
-  - Sum of all numbers (powers??) from 1 to n  
+  - Sum of all numbers from 1 to n: **n(n+1)/2**  
   ![alt text][sumof1ton]  
-  - Sum of the powers of two
-  - Sum of all the inverse of two
+  - Sum of the powers of two  
+  :question:  
+  - Sum of all the inverse of two: **1**  
   ![alt text][sumofinversepowersof2]
+  
+## :heavy_plus_sign: Review of Related(?) Things :heavy_plus_sign:
+**Floor**
+- ⎣X⎦ = Floor function: the largest integer < X  
+- Examples:
+  - ⎣2.7⎦ = 2 
+  - ⎣−2.7⎦ = −3 
+  - ⎣2⎦ = 2
+  
+**Ceiling**  
+- ⎡X⎤ = Ceiling function: the smallest integer > X  
+- Examples:
+  - ⎡2.3⎤ = 3 
+  - ⎡−2.3⎤ = −2
+  - ⎡2⎤ = 2
 
 ## :star: Asymptotic Analysis :star:
-- **Best-case, worst-case, average-case**  
+- [Panopto of lecture on 10/9](https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c3a3d656-d56b-45ce-9c49-8c30e0dc99e2)
+- We care about how behavior chang
+**Best-case, worst-case, average-case**  
 - **Usually we discuss worst-case complexity**  
 - **If we increase the input size, how does the computation time change**  
 
@@ -294,6 +313,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - With each increase in height, the number of nodes in a tree roughly doubles
 - A perfect tree has 2<sup>h+1</sup> -1 nodes 
 - Roughly half of a binary search tree are leaves
+- https://algs4.cs.princeton.edu/32bst/
 
 **[Back to top](#overview)**
 
@@ -430,6 +450,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Supports: insert(), findMin(), deleteMin(), changePriority()
 - Data is stored in priority, value pairs
 - In this class, we use the min-heap, where a lower value means it should dequeue first
+- https://algs4.cs.princeton.edu/24pq/
 
 ## :star: Data Structure :star:
 
@@ -439,7 +460,15 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 
 ### :small_blue_diamond: Implementation :small_blue_diamond:
 - Array
-- Find parents/children arithmetically
+**Find parents/children arithmetically**
+  - You can put root at index 0, but this is not commonly done. Leaving index 0 empty and starting with root in index 1 is done for more conveneint index arithmatic. **This is an example of an implementation decision**
+  - Put the root of the array at index 1
+  - Leave index 0 blank
+  - Calculating children/parent becomes:
+    - Left child: 2 * i
+    - Right child: 2 * i + 1
+    - Parent: i/2 
+  - 
 
 ### :small_blue_diamond: Runtimes :small_blue_diamond: 
 - Insert: O(log n), findMin: O(1), deleteMin O(log n)
@@ -466,6 +495,19 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Because most elements are near the bottom, they do not need to percolate down very far, this results in O(n) overall runtime
 
 **[Back to top](#overview)**
+
+Lazy delete for Sorted Array  
+A general technique for making delete as fast as find: Instead of actually removing the item just mark it deleted
+
+Plusses:  
+- Simpler to delete (no shifting). If element is re-added soon afterwards, simple to insert it again (no shifting)
+- Can control removals and do them later in batches (amortized cost)
+
+Minuses:  
+- Extra space for the “is-it-deleted” flag
+- Data structure full of deleted nodes wastes space
+- Now we can’t use N in runtime: find O(log m) time where m is data-structure size (okay)
+
 
 [sumof1ton]: https://github.com/kschumy/CSE373/raw/master/sumOfAllNumFrom1ToN.PNG
 

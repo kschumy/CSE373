@@ -178,15 +178,11 @@
     - ⎡2⎤ = 2
 
 ## :star: Important Summations :star: 
-
-### :small_blue_diamond: Sum of all numbers from 1 to n: **n(n+1)/2** :small_blue_diamond:
-  ![alt text][sumof1ton]  
-
-### :small_blue_diamond: Sum of the powers of two :small_blue_diamond: 
-  ![alt text][sumofpowersof2]  
-
-### :small_blue_diamond: Sum of all the inverse of two: **1** :small_blue_diamond:
-  ![alt text][sumofinversepowersof2]
+Name | Formula |
+---- | --------- |
+**Sum of all numbers from 1 to n = n(n+1)/2** | ![alt text][sumof1ton] |
+**Sum of the powers of two** | ![alt text][sumofpowersof2]<br>See [Lecture from 10/6](https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=ef17e934-0508-4b67-89c1-4f5cf8382a76) - start at about 40:00 |
+**Sum of all the inverse of two = 1** | ![alt text][sumofinversepowersof2] |
 
 ## :star: Asymptotic Analysis :star:
 - [Panopto of lecture on 10/9](https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c3a3d656-d56b-45ce-9c49-8c30e0dc99e2)
@@ -200,10 +196,11 @@
 - Must **mathmatically prove** the c and n₀ are sufficent. How to do this: start with some algebraic fact and perform mutations on it in order to get something in this form. 
 
 ## :star: Recurrences :star:
-### :small_blue_diamond: Steps :small_blue_diamond:
-1. Analysis of recursive functions
-2. Break the function into recursive and non-recursive
-3. Produce the recurrence relation (i.e. T(n))
+
+### :small_blue_diamond: Steps :small_blue_diamond:  
+1. Analysis of recursive functions  
+2. Break the function into recursive and non-recursive  
+3. Produce the recurrence relation (i.e. T(n))  
 4. Options (pick one)
     1. Roll out the recurrence
         - works better when there's only one child (so there's only one sub-operation)
@@ -213,9 +210,7 @@
         - How to do this:
           - Calculate the work at each row and then sum all of the rows.
           - It's **not** always the case that it's just the work in each row times the height. A lot of the times the work in each row is different. This is where you're going to use a lot of those [summations](#star-important-summations-star) (sum of all numbers n, sum of the powers of 2, etc). 
-          - Often can get log(n) height, but this does not mean that you get log(n) runtime. T(n) = 1 + 2(T(n/2))
-         
-
+          - Often can get log(n) height, but this does not mean that you get log(n) runtime. T(n) = 1 + 2(T(n/2)) = O(n) <- see link above from lecture on 10/6
 5. Find the closed form of the recurrence
 6. Upper bound this recurrence with a bigO bound.
 
@@ -273,12 +268,16 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
   - Simplify to T(n) = O(n) + T(n-1)
 
 ## :star: Amortized analysis :star:
-- **Used when an expensive operation occurs with predictable frequency (e.g. resizing an array)**  
+- Used when an expensive operation occurs with predictable frequency (e.g. resizing an array)**  
 - **Describe the state of the data structure**  
 - **Indicate the number of operations**  
 - **Determine how many are the costly operation and how many are the cheap operations**  
-- **# of costly * costly runtime + # cheap * cheap runtime**  
-- **Divide by the number of operations**  
+
+```
+(# of costly operations * costly runtime) + (# of cheap operations * cheap runtime)
+―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+                                # of operations
+```
 
 ## :star: Memory analysis :star:
 - **Calculating how much memory an algorithm needs**  

@@ -166,13 +166,16 @@
   - Number of itera+ons ∗ Time for Loop Body    
 
 ## :star: Important Summations :star: 
-- Often important with [recurrance](#star-recurrences-star)
-- Sum of all numbers from 1 to n: **n(n+1)/2**  
+Often important with [recurrance](#star-recurrences-star)
+
+### :small_blue_diamond: Sum of all numbers from 1 to n: **n(n+1)/2** :small_blue_diamond:
   ![alt text][sumof1ton]  
-- Sum of the powers of two  
-  - [Lecture from 10/6](https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=ef17e934-0508-4b67-89c1-4f5cf8382a76) **start at about 40:00**
+
+### :small_blue_diamond: Sum of the powers of two :small_blue_diamond: 
+[Lecture from 10/6](https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=ef17e934-0508-4b67-89c1-4f5cf8382a76) **start at about 40:00**
   ![alt text][sumofpowersof2]  
-- Sum of all the inverse of two: **1**  
+
+### :small_blue_diamond: Sum of all the inverse of two: **1**  
   ![alt text][sumofinversepowersof2]
   
 ## :heavy_plus_sign: Review of Related(?) Things :heavy_plus_sign:

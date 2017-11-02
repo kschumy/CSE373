@@ -158,7 +158,7 @@
   - peek: top() and front()
 - **This isn’t sufficient to distinguish them, their behavior is also a critical part of their ADT. FIFO v LIFO**
 
-――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+――――――――――――――――――――――――――――――――――――――――――――――――――――
 
 ## :star: Data structure choices :star:
 - Arrays and Linked Lists

@@ -210,7 +210,7 @@ Name | Formula |
         - How to do this:
           - Calculate the work at each row and then sum all of the rows.
           - It's **not** always the case that it's just the work in each row times the height. A lot of the times the work in each row is different. This is where you're going to use a lot of those [summations](#star-important-summations-star) (sum of all numbers n, sum of the powers of 2, etc). 
-          - Often can get log(n) height, but this does not mean that you get log(n) runtime. T(n) = 1 + 2(T(n/2)) = O(n) <- see link above from lecture on 10/6
+          - Often can get log(n) height, but this does not mean that you get log(n) runtime. Example: T(n) = 1 + 2(T(n/2)) = O(n) <- see link above from lecture on 10/6
 5. Find the closed form of the recurrence
 6. Upper bound this recurrence with a bigO bound.
 
@@ -267,17 +267,26 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
   - Rather than saying T(n) = c₀ + n * c₁ + T(n-1), we can observe that c₀ + n * c₁ is in O(n)
   - Simplify to T(n) = O(n) + T(n-1)
 
-## :star: Amortized analysis :star:
-- Used when an expensive operation occurs with predictable frequency (e.g. resizing an array)**  
-- **Describe the state of the data structure**  
-- **Indicate the number of operations**  
-- **Determine how many are the costly operation and how many are the cheap operations**  
+## :heavy_plus_sign: Master theorem :heavy_plus_sign:
+- These recurrences all follow a similar pattern
+- Therefore, if you can produce a recurrence, there is actually a procedural way to produce solutions
+- If T(n) = a * T(n / b) + nᶜ for n > n₀ and **if the base case is a constant**  
 
+## :star: Amortized analysis :star:
+- **Used when an expensive operation occurs with predictable frequency (e.g. resizing an array)**  
+- **Steps to describe doing an amortized analysis on the midterm:** 
+  - Describe the state of the data structure at the beginning. (such as, “the array is full and has *n* elements”). 
+  - Indicate the number of operations. (“Perform *n* insertions”). 
+  - Determine how many costly operations there are and how many cheap operation there is there are.
+    - The reason that this is important is because the answer depends on these two. If the array is full and has *n* elements and then we add *n* more (provided that we're doubling the size of the array), we can restrict the fact that there is exactly one costly operation, i.e. exactly one resize.
+  - Calculate...
 ```
-(# of costly operations * costly runtime) + (# of cheap operations * cheap runtime)
-―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
-                                # of operations
+(# of costly operations * costly runtime) + (# of cheap operations * cheap runtime)     total runtime of operations
+―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――  =  ―――――――――――――――――――――――――― = Amortized analysis
+                                # of operations                                              # of operations
 ```
+Anna ties is different than best case or worst case. It is a different type of Analytical kibble case. also so far we've only seen examples where the cheap run time is constant, but be prepared for there should be a non at constant sheep run time on the midterm. Be able to apply the run times for that case. 
+
 
 ## :star: Memory analysis :star:
 - **Calculating how much memory an algorithm needs**  
@@ -474,6 +483,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 ### :small_blue_diamond: Implementation :small_blue_diamond:
 - **Array**
   - fill in from review lecture
+  - [How this works](https://algs4.cs.princeton.edu/24pq/images/heap-representations.png)
   - Why do an array at all?
     - Pros
       - Memory efficiency

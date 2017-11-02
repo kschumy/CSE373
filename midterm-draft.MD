@@ -351,9 +351,9 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - With each increase in height, the number of nodes in a tree roughly doubles. This is where we start to get *log n* behavoir
 - Roughly half of a binary search tree are leaves
 - For a BST of height h:
-  - max # of leaves: 2ʰ               <- perfect tree
-  - max # of nodes: 2ʰ⁺¹ ― 1          <- perfect tree 
-  - max # of internal nodes: 2ʰ ― 1   <- perfect tree
+  - max # of leaves: 2ʰ ← perfect tree
+  - max # of nodes: 2ʰ⁺¹ - 1 ← perfect tree 
+  - max # of internal nodes: 2ʰ - 1 ← perfect tree
   - min # of nodes: h + 1
   - min # of nodes in a full BST: 2h + 1
   - # of leaf nodes in a perfect BST: (n + 1) / 2
@@ -363,8 +363,8 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 
 ## :star: BSTs Analysis :star:
 - Find()
-  - Worst-case: O(n) <- when the tree is linear
-  - Best-case: O(1) <- when the item is the root
+  - Worst-case: O(n) ← when the tree is linear
+  - Best-case: O(1) ← when the item is the root
   - Generally, however: O(log n) when the tree is balanced 
 - Insert()
   - Worst case: O(n)
@@ -390,14 +390,15 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 ## :star: Two main traversal families :star:
 
 ### :small_blue_diamond: Depth First Search (DFS) :small_blue_diamond:
-- Usually implemented recursively
-- Whether the parent is processed before, after or in the middle of its children determines if the traversal is pre-order, post-order or in-order respectively
+- Usually implemented recursively. So if you're doing memory analysis, the call stack is important.
+- Whether the parent is processed before, after or in the middle of its children determines if the traversal is pre-order, post-order or in-order respectively. 
 
 ### :small_blue_diamond: Breadth First Search (BFS) :small_blue_diamond:
 - Put the root into a queue
 - Dequeue a node, process it and enqueue its children
 - Top to bottom left to right traversal
-- Queue is largest at the widest part of the tree
+- Queue is largest at the widest part of the tree, which is up to n/2 elements.
+- O(n) memory use
 
 **[Back to top :rocket:](#overview)**
 
@@ -405,12 +406,11 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 
 # AVL TREES
 
-## :star: Properties :star:
-- Specific type of binary search tree
+## :star: AVL Properties :star:
+- AVL trees are binary search trees with the AVL property
+- AVL property: Balance = | height(left) – height(right) | can be at most 1
 - Still must implement binary search
 - Nodes in AVL trees have two extra fields: height and balance
-- Balance = | height(left) – height(right) |
-- Balance for each node must be less than or equal to 1
 - Trees with this condition still have O(log n) height
 - No covering delete in this course
 - Find: O(log n)

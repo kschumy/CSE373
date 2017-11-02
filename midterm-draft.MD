@@ -461,7 +461,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 ### :small_blue_diamond: Implementation :small_blue_diamond:
 - Array
 **Find parents/children arithmetically**
-  - You can put root at index 0, but this is not commonly done. Leaving index 0 empty and starting with root in index 1 is done for more conveneint index arithmatic. **This is an example of an [implementation decision](#-star-Implementation-star).**
+  - You can put root at index 0, but this is not commonly done. Leaving index 0 empty and starting with root in index 1 is done for more conveneint index arithmatic. **This is an example of an [implementation decision](#star-implementation-star).**
   - Put the root of the array at index 1
   - Leave index 0 blank
   - Calculating children/parent becomes:

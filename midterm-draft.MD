@@ -322,7 +322,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
   - Amortized analysis is different than best case or worst case. It is a seperate type of analytical case.
   - So far we've only seen examples where the cheap run time is constant, but be prepared for a non-constant cheap runtime on the midterm. Be able to apply the run times for that case. :triangular_flag_on_post:
 
-――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
 
 ## :star: Memory analysis :star: :question:
 - **Calculating how much memory an algorithm needs**, not for a data structure. **This is in addition to the data itself.** So if we have are data stored in AVL tree and we want to see how much memory it takes to do a recursive find, we don't include the data structure itself. 

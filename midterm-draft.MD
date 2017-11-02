@@ -28,7 +28,7 @@
 - Also might be given code to debug or calculate the runtime for it. 
 
 ### :small_blue_diamond: Question-Specific :small_blue_diamond:
-- **ALSO SEE THE TOPICS BELOW FOR MORE INFO**
+- ALSO SEE THE TOPICS BELOW FOR MORE INFO  
 - Q1 is short answer but will have many parts. 
   - It may be best to save this for last because each is time-consuming for a number of points they're worth individually.
   - Multiple questions in this, all with varying difficulty.
@@ -55,7 +55,8 @@
 # DEFINITIONS
 
 ## :star: Abstract Data Type (ADT) :star:
-- **Has expected behavior**  
+- **Has expected behavior**
+- **Can't be analyzed asymptotically by itself, as need to know how the data is structured**  
 - **Examples**
   - Stacks  
   - Queues  
@@ -77,32 +78,38 @@
 
 ## :star: Implementation :star:
 - **Low-level design decisions**
+  - Example: when using a heap, do we use 0 indexing or 1 indexing? :question:
 - **Language specific**
+  - It doesn't change asymptotic performance, but it is language specific design decisions that we can make. 
 
-## :star: Examples :star:
-- The Queue ADT supports enqueue, dequeue and front.
-- Arrays and Linked Lists are examples of the data structures
-- Implementation: front and back pointers
+## :star: Summary/Other Relevant Info :star:
+- **Know the different levels**
+  - Implementation is the lowest level (actual code considers this)
+  - Data structure is higher than implementation
+  - ADT is totally separate from the data and is just behavior and functions
+- **Examples**
+  - The Queue ADT supports enqueue, dequeue and front, and the ADT includes FIFO.
+  - Arrays and Linked Lists are examples of the data structures.
+  - Implementation: how we include front and back pointers to make implementation easier.
 - **Summary of ADT vs. Data Structures**
   - The ADT describes the methods provided and the behavior we expect from them.
   - The Data Structure is a theoretical arrangement of the data that supports the functionality of the ADT
   
-## :heavy_plus_sign: Testing  (not on study guide) :heavy_plus_sign: 
-**Two primary types of testing**  
-1. Black box
-  - Behavior only, no peeking into the code
-  - This usually tests ADT behavior
-  - Can test performance/efficiency by using a timer
- 2. White box (or clear box)
-  - Where there is an understanding of the implementation that can be leveraged for testing
-  - If you’re writing your own DS, you can peek into attributes that you would normally refuse access to the client  
-
-**Good things to test**
-- Expected behavior (at multiple sizes)
-- Forbidden input
-- Empty/Null
-- Side effects
-- Boundary/Edge Cases
+## :heavy_plus_sign: Testingn :heavy_plus_sign: 
+- **Two primary types of testing**  
+  - Black box
+    - Behavior only, no peeking into the code
+    - This usually tests ADT behavior
+    - Can test performance/efficiency by using a timer
+  - White box (or clear box)
+    - Where there is an understanding of the implementation that can be leveraged for testing
+    - If you’re writing your own DS, you can peek into attributes that you would normally refuse access to the client  
+- **Good things to test**
+  - Expected behavior (at multiple sizes)
+  - Forbidden input
+  - Empty/Null
+  - Side effects
+  - Boundary/Edge Cases
 
 **[Back to top](#overview)**
 
@@ -138,9 +145,11 @@
 - Considerations
   - Memory usage
   - Ease of implementation
-  - Resizing time
+  - Resizing time (comes up for arrays)
+  - Memory hierarchy (often gives an advantage to arrays) 
 - Runtimes:
-  - O(1) for all functions
+  - O(1) for all functions (when front and back pointers are implemented correctly), except when resizing.
+  - They constrain our access to the data so severely that were able to get really quick run times from them. 
 
 **[Back to top](#overview)**
 
@@ -153,9 +162,12 @@
   - Comparisons, mathematical operations, assignments 
 - **For loops and while statements**  
   - Count the number of times relevant code is executed
+  - Multiply opperations
 - **Important summations**
-  - Sum of all numbers from 1 to n
+  - Sum of all numbers (powers??) from 1 to n
+  
   - Sum of the powers of two
+  - Sum of all the inverse of two
 
 ## :star: Asymptotic Analysis :star:
 - **Best-case, worst-case, average-case**  

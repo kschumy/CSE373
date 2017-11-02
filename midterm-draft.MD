@@ -164,12 +164,15 @@
 - **For loops and while statements**  
   - Count the number of times relevant code is executed
   - Number of itera+ons ∗ Time for Loop Body    
-- **Important summations**
-  - Sum of all numbers from 1 to n: **n(n+1)/2**  
+
+## :star: Important Summations :star: 
+- Often important with [recurrance](#star-recurrences-star)
+- Sum of all numbers from 1 to n: **n(n+1)/2**  
   ![alt text][sumof1ton]  
-  - Sum of the powers of two  
-  :question:  
-  - Sum of all the inverse of two: **1**  
+- Sum of the powers of two  
+  - [Lecture from 10/6](https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=ef17e934-0508-4b67-89c1-4f5cf8382a76) **start at about 40:00**
+  ![alt text][sumofpowersof2]  
+- Sum of all the inverse of two: **1**  
   ![alt text][sumofinversepowersof2]
   
 ## :heavy_plus_sign: Review of Related(?) Things :heavy_plus_sign:
@@ -195,16 +198,27 @@
 ## :star: BigO notation :star:
 - **Upper bound for a given function  
 - **f(n) = O(g(n)) if there exists a c and n₀ for which f(n) < c\*g(n) for all n > n₀** 
-- Must math matically prove the c and n₀ are sufficent.
+- Must **mathmatically prove** the c and n₀ are sufficent. How to do this: start with some algebraic fact and perform mutations on it in order to get something in this form. 
 
 ## :star: Recurrences :star:
 ### :small_blue_diamond: Steps :small_blue_diamond:
-- Analysis of recursive functions
-- Break the function into recursive and non-recursive
-- Produce the recurrence relation
-- Roll out the recurrence or produce the recurrence tree
-- Find the closed form of the recurrence
-- Upper bound this recurrence with a bigO bound.
+1. Analysis of recursive functions
+2. Break the function into recursive and non-recursive
+3. Produce the recurrence relation (i.e. T(n))
+4. Options (pick one)
+    1. Roll out the recurrence
+        - works better when there's only one child (so there's only one sub-operation)
+    2. Produce the recurrence tree
+        - almost always used when there's more than one child
+        - [Lecture from 10/6](https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=ef17e934-0508-4b67-89c1-4f5cf8382a76) **start at about 40:00**
+        - How to do this:
+          - Calculate the work at each row and then sum all of the rows.
+          - It's **not** always the case that it's just the work in each row times the height. A lot of the times the work in each row is different. This is where you're going to use a lot of those [summations](#star-important-summations-star) (sum of all numbers n, sum of the powers of 2, etc). 
+          - Often can get log(n) height, but this does not mean that you get log(n) runtime. T(n) = 1 + 2(T(n/2))
+         
+
+5. Find the closed form of the recurrence
+6. Upper bound this recurrence with a bigO bound.
 
 ### :small_blue_diamond: Example :small_blue_diamond:
 
@@ -398,7 +412,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - If the secondary hash value and the table size are coprime (they share no factors), then secondary hashing will succeed if there is an open space
 - If table size is prime, only need to check if hash is a multiple
 
-### :star: Chaining :star:
+## :star: Chaining :star:
 - Rather than probing for an open position, we could just save multiple objects in the same position
 - Some data structure is necessary here
 - Commonly: a linked list, AVL tree or secondary hash table.
@@ -520,6 +534,6 @@ Minuses:
 - Now we can’t use N in runtime: find O(log m) time where m is data-structure size (okay)
 
 
-[sumof1ton]: https://github.com/kschumy/CSE373/raw/master/sumOfAllNumFrom1ToN.PNG
-
+[sumof1ton]: https://github.com/kschumy/CSE373/raw/master/sumOfAllNumFrom1ToN.PNG  
+[sumofpowersof2]: https://github.com/kschumy/CSE373/raw/master/sumOfPowersOf2.PNG    
 [sumofinversepowersof2]: https://github.com/kschumy/CSE373/raw/master/sumOfInversePowersOf2.PNG

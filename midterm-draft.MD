@@ -111,7 +111,7 @@
   - Side effects
   - Boundary/Edge Cases
 
-**[Back to top](#overview)**
+**[Back to top :rocket:](#overview)**
 
 --------------------------
 
@@ -151,7 +151,7 @@
   - O(1) for all functions (when front and back pointers are implemented correctly), except when resizing.
   - They constrain our access to the data so severely that were able to get really quick run times from them. 
 
-**[Back to top](#overview)**
+**[Back to top :rocket:](#overview)**
 
 --------------------------
 
@@ -173,19 +173,18 @@
   ![alt text][sumofinversepowersof2]
   
 ## :heavy_plus_sign: Review of Related(?) Things :heavy_plus_sign:
-**Floor**
-- ⎣X⎦ = Floor function: the largest integer < X  
-- Examples:
-  - ⎣2.7⎦ = 2 
-  - ⎣−2.7⎦ = −3 
-  - ⎣2⎦ = 2
-  
-**Ceiling**  
-- ⎡X⎤ = Ceiling function: the smallest integer > X  
-- Examples:
-  - ⎡2.3⎤ = 3 
-  - ⎡−2.3⎤ = −2
-  - ⎡2⎤ = 2
+- **Floor**
+  - ⎣X⎦ = Floor function: the largest integer < X  
+  - Examples:
+    - ⎣2.7⎦ = 2 
+    - ⎣−2.7⎦ = −3 
+    - ⎣2⎦ = 2
+- **Ceiling**  
+  - ⎡X⎤ = Ceiling function: the smallest integer > X  
+  - Examples:
+    - ⎡2.3⎤ = 3 
+    - ⎡−2.3⎤ = −2
+    - ⎡2⎤ = 2
 
 ## :star: Asymptotic Analysis :star:
 - [Panopto of lecture on 10/9](https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c3a3d656-d56b-45ce-9c49-8c30e0dc99e2)
@@ -282,7 +281,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - O(n²): doubling the input increases the runtime by a factor of 4.
 - O(2ⁿ): exponential, increasing the input by one doubles the runtime
 
-**[Back to top](#overview)**
+**[Back to top :rocket:](#overview)**
 
 --------------------------
 
@@ -298,7 +297,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - In this course, duplicate keys are not allowed
 - Most data structures can implement a dictionary
 
-**[Back to top](#overview)**
+**[Back to top :rocket:](#overview)**
 
 --------------------------
 
@@ -315,7 +314,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Roughly half of a binary search tree are leaves
 - https://algs4.cs.princeton.edu/32bst/
 
-**[Back to top](#overview)**
+**[Back to top :rocket:](#overview)**
 
 --------------------------
 
@@ -333,7 +332,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Top to bottom left to right traversal
 - Queue is largest at the widest part of the tree
 
-**[Back to top](#overview)**
+**[Back to top :rocket:](#overview)**
 
 --------------------------
 
@@ -357,7 +356,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Left-right and right-left rotations involve the grandchild being rotated up into position. The grandparent and parent become the two children
 - It is important that these rotations preserve BST property
 
-**[Back to top](#overview)**
+**[Back to top :rocket:](#overview)**
 
 --------------------------
 
@@ -405,7 +404,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Commonly: a linked list, AVL tree or secondary hash table.
 - Resizing isn’t necessary, but if you don’t, you will get O(n) runtime.
 
-**[Back to top](#overview)**
+**[Back to top :rocket:](#overview)**
 
 --------------------------
 
@@ -418,7 +417,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
   - Spatial locality – Items near each other are moved together (memory pages)
   - Temporal locality – memory used recently will be used again
 
-**[Back to top](#overview)**
+**[Back to top :rocket:](#overview)**
 
 --------------------------
 
@@ -440,7 +439,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - If the signpost overflows, split the signpost into two signposts and try to add the new signpost to the parent
 - Split back up to the root and create a new root if necessary
 
-**[Back to top](#overview)**
+**[Back to top :rocket:](#overview)**
 
 --------------------------
 
@@ -454,13 +453,25 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 
 ## :star: Data Structure :star:
 
-### :small_blue_diamond: Heap:small_blue_diamond:
+### :small_blue_diamond: Heap :small_blue_diamond:
 - Complete binary tree
+- complete binary tree with N nodes has exactly ceiling(N/2) leaf nodes
 - Heap property
+- [Visualizer](https://www.cs.usfca.edu/~galles/visualization/Heap.html)
 
 ### :small_blue_diamond: Implementation :small_blue_diamond:
-- Array
-**Find parents/children arithmetically**
+- **Array**
+  - fill in from review lecture
+  - Why do an array at all?
+    - Pros
+      - Memory efficiency
+      - Fast accesses to data (due to parent-child easy math, last position is index size)
+      - Forces log n depth
+    - Cons
+      - Needs to resize
+      - Can waste space (if tree is not complete???)
+
+- **Find parents/children arithmetically**
   - You can put root at index 0, but this is not commonly done. Leaving index 0 empty and starting with root in index 1 is done for more conveneint index arithmatic. **This is an example of an [implementation decision](#star-implementation-star).**
   - Put the root of the array at index 1
   - Leave index 0 blank
@@ -494,7 +505,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Percolate that element down as much as necessary
 - Because most elements are near the bottom, they do not need to percolate down very far, this results in O(n) overall runtime
 
-**[Back to top](#overview)**
+**[Back to top :rocket:](#overview)**
 
 Lazy delete for Sorted Array  
 A general technique for making delete as fast as find: Instead of actually removing the item just mark it deleted

@@ -333,22 +333,53 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 
 ## :star: BSTs Properties :star:
 - Binary trees, where each node has at most two children
-- All, subtrees must also be binary search trees
 - Maintains search property
   - All values (which are keys) in the left subtree must be less than the parent
   - All values (which are keys) in the right subtree must be greater than the parent
-- All, subtrees must also be binary search trees
-- With this property, all binary search trees have sorted in-order traversals. 
-- Predecessor = the element just before it in sorted order.  
-  Successor = the element just after it in sorted order.
+- All, subtrees must also be binary search trees. With this property, all binary search trees have sorted in-order traversals. 
+- When implimenting with a dictionary...
+  - Insert() and find() remain similar
+  - Key is the primary comparison
+  - Value is attached to the key
+  - Dictionary fact: All values have an associated key
+  - All keys are unique, i.e. each key only has one value
 - https://algs4.cs.princeton.edu/32bst/
 
-## :star: BSTs Height and Node Count:star:
+## :star: BSTs Height and Node Count :star:
+- Height of an empty tree = -1. Height of a single node = 0. 
 - Height = 1 + max(height(left),height(right)) 
-- With each increase in height, the number of nodes in a tree roughly doubles. Log
-- A perfect tree has 2<sup>h+1</sup> -1 nodes 
+- With each increase in height, the number of nodes in a tree roughly doubles. This is where we start to get *log n* behavoir
 - Roughly half of a binary search tree are leaves
-- https://algs4.cs.princeton.edu/32bst/
+- For a BST of height h:
+  - max # of leaves: 2ʰ               <- perfect tree
+  - max # of nodes: 2ʰ⁺¹ ― 1          <- perfect tree 
+  - max # of internal nodes: 2ʰ ― 1   <- perfect tree
+  - min # of nodes: h + 1
+  - min # of nodes in a full BST: 2h + 1
+  - # of leaf nodes in a perfect BST: (n + 1) / 2
+- For a BST with n nodes inserted in arbitrary order 
+  - Average height is O(log N)
+  - Worst case height is O(N)
+
+## :star: BSTs Analysis :star:
+- Find()
+  - Worst-case: O(n) <- when the tree is linear
+  - Best-case: O(1) <- when the item is the root
+  - Generally, however: O(log n) when the tree is balanced 
+- Insert()
+  - Worst case: O(n)
+  - Best case: O(1)
+  - General case depends on height of the tree
+- Delete():
+  - Some cases
+    - The element is not in the data structure: don’t change the data, possibly throw an exception
+    - The key is a leaf in the tree: ermove the pointer to that node
+    - The node has one child: replace that node with its child
+    - The node has two children: “delete” it by overwriting the node with a different <key, value> pair
+      - In order to avoid changing the shape and doing too much work, it must be either the predecessor (the element just before it in sorted order) or the successor (the element just after it in sorted order).
+  - Worst case(): O(n), finding the predecessor/successor takes time, esp. in very unbalanced tree.
+  - Best case(): O(1) if we’re deleting the root from a degenerate tree (“Degenerate” trees are those that are very unbalanced) 
+  - Generally, however: O(log n) when the tree is balanced 
 
 **[Back to top :rocket:](#overview)**
 
@@ -543,6 +574,13 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Because most elements are near the bottom, they do not need to percolate down very far, this results in O(n) overall runtime
 
 **[Back to top :rocket:](#overview)**
+
+Perfect tree: Each row completely full
+Full tree: Each node has 0 or 2 children
+Complete tree: Each row completely full except maybe the bottom row,
+which is filled from left to right
+
+Beckman's Ale-gorithm - prof's algorithms prof's beer :beer:
 
 Lazy delete for Sorted Array  
 A general technique for making delete as fast as find: Instead of actually removing the item just mark it deleted

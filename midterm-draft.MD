@@ -125,6 +125,8 @@
   - Side effects
   - Boundary/Edge Cases
 
+--------------------------
+
 **[Back to top :rocket:](#overview)**
 
 --------------------------

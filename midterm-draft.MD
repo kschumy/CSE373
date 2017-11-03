@@ -479,9 +479,6 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
   - Left-left and right-right rotations involve the child of the affected node being rotated up into position
   - Left-right and right-left rotations involve the grandchild being rotated up into position. The grandparent and parent become the two children.
 - It is important that these rotations preserve BST property.
-- Further explanation of this
-  - 
-  - http://btechsmartclass.com/DS/U5_T2.html
 
 **Rotation** | **Example* |
 -------- | --------- |

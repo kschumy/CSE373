@@ -403,7 +403,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
   - max # of internal nodes: 2ʰ - 1 ← perfect tree
   - min # of nodes: h + 1
   - min # of nodes in a full BST: 2h + 1
-  - # of leaf nodes in a perfect BST: (n + 1) / 2
+  - \# of leaf nodes in a perfect BST: (n + 1) / 2
 - For a BST with n nodes inserted in arbitrary order 
   - Average height is O(log N)
   - Worst case height is O(N)
@@ -509,6 +509,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Four types of rotations
   - Left-left and right-right rotations involve the child of the affected node being rotated up into position
   - Left-right and right-left rotations involve the grandchild being rotated up into position. The grandparent and parent become the two children.
+- The node that was thrown out of balance becomes a direct child of the new root. Make sure you double check this and that you have an actual AVL at the end.
 - It is important that these rotations preserve BST property.
 
 --------------------------
@@ -546,6 +547,20 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
     - Quadratic
     - Secondary Hashing
   2. Chaining
+  
+--------------------------
+ 
+## :star: Hash Functions :star:
+- For the exam, you do not need to write your own hash functions but you need to be able to determine if one is good or bad and why it's good or bad.
+- We want our hash function to do the following:
+  - **Be repeatable** ← You need to be able to re-access the data. 
+  - **Be equally distributed** ← Too much clustering hinders ability to run in constant time.  
+  - **Run in constant time**  ← Want it to be fast. Handling collisions is important to maintining this. 
+  - Return an integer (which often is modded by the table size to ensure it'll fit.
+  - Needs to incorporate all the data in the keys
+- Examples of likely bad hash functions (assuming nothing unusual about these situations)
+  - Years (such as birth years
+  - Summations of numbers (not all are equally likely, which is the same problem with sums of dice roles)
 
 --------------------------
 

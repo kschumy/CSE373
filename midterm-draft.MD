@@ -347,6 +347,8 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
     - Be able to describe in a meaningful way how the runtime changes, specifically that to double the input increases the runtime by a factor of 4.
   - O(2ⁿ): exponential, increasing the input by one doubles the runtime
 
+<br>
+
 **[Back to top :rocket:](#overview)**
 
 --------------------------
@@ -364,6 +366,8 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
   - In this course, duplicate keys are not allowed
   - Most data structures can implement a dictionary.
   - Differs from sets, which have no values and only cares if a key is present or not. Though set also and ADT and has find, insert and delete.
+
+<br>
 
 **[Back to top :rocket:](#overview)**
 
@@ -426,6 +430,8 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
   - Best case(): O(1) if we’re deleting the root from a degenerate tree (“Degenerate” trees are those that are very unbalanced) 
   - Generally, however: O(log n) when the tree is balanced 
 
+<br>
+
 **[Back to top :rocket:](#overview)**
 
 --------------------------
@@ -448,6 +454,8 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Queue is largest at the widest part of the tree, which is up to n/2 elements.
 - O(n) memory use
 
+<br>
+
 **[Back to top :rocket:](#overview)**
 
 --------------------------
@@ -460,11 +468,34 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - AVL property: Balance = | height(left) – height(right) | can be at most 1
 - Still must implement binary search
 - Nodes in AVL trees have two extra fields: height and balance
-- Trees with this condition still have O(log n) height
-- No covering delete in this course. But know that lazy deletion is a thing (make a node as deleted and come back to it later) - log n 
-- Find: O(log n)
-- Insert O(log n) :triangular_flag_on_post: will be expected to insert like in all the practice problems
+- Insert O(log n) - **will insert like in all the practice problems** :triangular_flag_on_post:
+  - [Practice online](https://www.cs.usfca.edu/~galles/visualization/AVLtree.html)
+
+--------------------------
+
+## :star: AVL Asymptotic Runtimes :star:
+- Trees with this condition still have O(log n) height.
+- Not covering delete in this course. But know that lazy deletion is a thing (make a node as deleted and come back to it later) - log n 
+- **If AVL rotation can enforce O(log n) height, what are the asymptotic runtimes for our functions?**
+  - Insert(key k, value v) = O(log n) + balancing
+  - Find(key k) : O(height) = O(log n)
+  - Delete(key k): O(log n) + balancing(?)
+- How long does it take to perform a balance?
+  - There are at most three nodes and four subtrees to move around. **O(1)**
+
+--------------------------
+
+## :star: AVL Height-Related Info :star:
 - If given the height, what are the min and max number of nodes? :question:
+  - The minimum number of nodes for a search tree of height h is dependent on the minimum number of nodes in an AVL tree of h-1 and h-2. Formula: f(h-1) + f(h-2) + 1 :question:
+    - Got log n height for this.
+- Height proof
+  - Nₖ = 1 + Nₖ₋₁-1 + Nₖ₋₂
+  - Because the smallest AVL tree is a node (1) with a child that is the smallest AVL tree of height k-1 (Nₖ₋₁) and the other child is the smallest AVL tree of height k-2 (Nₖ₋₂).
+  - This means every non-leaf has balance 1. Nothing in the tree is perfectly balanced.
+  - Nₖ > 2Nₖ₋₂ ← This means the tree doubles in size after every two height (compared to a perfect tree which doubles with every added height) 
+  
+--------------------------
 
 **Balanced AVL** |
 ------------ |
@@ -473,19 +504,25 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 --------------------------
 
 ## :star: AVL Rotations :star:
-- AVL Rotations occur when an insertion makes a node out of balance. The rotation is performed at the lowest point of imbalance.
+- AVL rotations occur when an insertion makes a node out of balance. The rotation is performed at the lowest point of imbalance.
 - The rotations are relative to the node that is unbalanced, with the rotation depending on which grandchild received the new node.
 - Four types of rotations
   - Left-left and right-right rotations involve the child of the affected node being rotated up into position
   - Left-right and right-left rotations involve the grandchild being rotated up into position. The grandparent and parent become the two children.
 - It is important that these rotations preserve BST property.
 
-**Rotation** | **Example* |
+--------------------------
+
+## :star: AVL Rotations Examples (small) :star:
+
+**Rotation** | **Example** |
 -------- | --------- |
 **Left-Left** | ![alt text][llavl] |
 **Right-Right** | ![alt text][rravl] |
 **Left-Right** | ![alt text][lravl] |
 **Right-Left** | ![alt text][rlavl] |
+
+<br>
 
 **[Back to top :rocket:](#overview)**
 
@@ -540,6 +577,8 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Commonly: a linked list, AVL tree or secondary hash table.
 - Resizing isn’t necessary, but if you don’t, you will get O(n) runtime.
 
+<br>
+
 **[Back to top :rocket:](#overview)**
 
 --------------------------
@@ -553,6 +592,8 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Dictated by two types of behavior
   - Spatial locality – Items near each other are moved together (memory pages)
   - Temporal locality – memory used recently will be used again
+
+<br>
 
 **[Back to top :rocket:](#overview)**
 
@@ -578,6 +619,8 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
   - Split the leaf into two nodes and add the new leaf to the parent
 - If the signpost overflows, split the signpost into two signposts and try to add the new signpost to the parent
 - Split back up to the root and create a new root if necessary
+
+<br>
 
 **[Back to top :rocket:](#overview)**
 
@@ -653,12 +696,18 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Percolate that element down as much as necessary
 - Because most elements are near the bottom, they do not need to percolate down very far, this results in O(n) overall runtime
 
+<br>
+
 **[Back to top :rocket:](#overview)**
 
-Perfect tree: Each row completely full
-Full tree: Each node has 0 or 2 children
-Complete tree: Each row completely full except maybe the bottom row,
-which is filled from left to right
+--------------------------
+--------------------------
+
+# Hodgepodge
+
+Perfect tree: Each row completely full  
+Full tree: Each node has 0 or 2 children  
+Complete tree: Each row completely full except maybe the bottom row, which is filled from left to right
 
 Beckman's Ale-gorithm - prof's algorithms prof's beer :beer:
 

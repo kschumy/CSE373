@@ -564,6 +564,16 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 
 --------------------------
 
+## :star: Load Factor :star:
+- The load factor, λ, of a hash table is	
+```
+       Number of elements
+λ = ―――――――――――――――――――――――
+          Table size
+```
+
+--------------------------
+
 ## :star: Probing :star:
 
 ### :small_blue_diamond: Linear probing :small_blue_diamond: 
@@ -681,7 +691,6 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
     - Left child: 2 * i
     - Right child: 2 * i + 1
     - Parent: i/2 
-  - 
 
 ### :small_blue_diamond: Runtimes :small_blue_diamond: 
 - Insert: O(log n), findMin: O(1), deleteMin O(log n)

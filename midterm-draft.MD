@@ -466,6 +466,10 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Insert O(log n) :triangular_flag_on_post: will be expected to insert like in all the practice problems
 - If given the height, what are the min and max number of nodes? :question:
 
+Balanced AVL |
+------------ |
+![alt text][balancedavl] |
+
 --------------------------
 
 ## :star: AVL Rotations :star:
@@ -478,6 +482,13 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Further explanation of this
   - 
   - http://btechsmartclass.com/DS/U5_T2.html
+
+Rotation | Example |
+-------- | --------- |
+**Left-Left** | ![alt text][sumof1ton] |
+**Right-Right** | ![alt text][sumofpowersof2]<br>See [Lecture from 10/6](https://uw.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=ef17e934-0508-4b67-89c1-4f5cf8382a76) - start at about 40:00 |
+**Left-Right** | ![alt text][sumofinversepowersof2] |
+**Right-Left** | ![alt text][sumofinversepowersof2] |
 
 **[Back to top :rocket:](#overview)**
 
@@ -669,4 +680,5 @@ Minuses:
 
 [sumof1ton]: https://github.com/kschumy/CSE373/raw/master/sumOfAllNumFrom1ToN.PNG  
 [sumofpowersof2]: https://github.com/kschumy/CSE373/raw/master/sumOfPowersOf2.PNG    
-[sumofinversepowersof2]: https://github.com/kschumy/CSE373/raw/master/sumOfInversePowersOf2.PNG
+[sumofinversepowersof2]: https://github.com/kschumy/CSE373/raw/master/sumOfInversePowersOf2.PNG  
+[balancedavl]: https://github.com/kschumy/CSE373/raw/master/balancedAVL.PNG

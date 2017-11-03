@@ -539,14 +539,21 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
   - It should distribute into all of the available spots evenly
 - Hash tables provide O(1) runtime IF
   - Collisions are not a problem
-  - Decrease the chance of collisions by increasing the amount of memory (load factor)
+  - Decrease the chance of collisions by increasing the amount of memory (load factor λ)
     - Resizing is costly
+    ```
+          Number of elements
+    λ = ――――――――――――――――――――――
+           Table size
+   ```
 - 2 ways to handle collisions
   1. Probing
     - Linear
     - Quadratic
     - Secondary Hashing
   2. Chaining
+- **when to use**
+  - These are useful when we have small data sizes. We want to stay in memory or hopefully stay in cache where accesses are fast. 
   
 --------------------------
  
@@ -564,43 +571,34 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 
 --------------------------
 
-## :star: Load Factor :star:
-- The load factor, λ, of a hash table is	
-```
-       Number of elements
-λ = ―――――――――――――――――――――――
-          Table size
-```
-
---------------------------
-
 ## :star: Probing :star:
 
 ### :small_blue_diamond: Linear probing :small_blue_diamond: 
 - Try the appropriate hash table row first
 - Increase the index by one until a spot is found
 - Guaranteed to find a spot if it is available
-- If the array is too full, its operations reach O(n) time. Primary clustering
+- If the array is too full, its operations reach O(n) time. 
+  - **Primary clustering**: overlapping keys clustered together. Mulitple different keys are interferring with each other.
 
 ### :small_blue_diamond: Quadratic Probing :small_blue_diamond: 
 - Rather than increasing by one each time, we increase by the squares
-- k+1, k+4, k+9, k+16, k+25
-- Certain tables can cause secondary clustering
+- k+1, k+4, k+9, k+16, k+25  ← with k being the original index
+- Certain tables can cause **secondary clustering**
+  - All of the keys that had the same hash value are going to share the same elements in the hash table.
 - Can fail to insert if the table is over half full
 
 ### :small_blue_diamond: Secondary Hashing :small_blue_diamond: 
-- If two keys collide in the hash table, then a secondary hash indicates the probing size
-- Need to be careful, possible for infinite loops with a very empty array
-- If the secondary hash value and the table size are coprime (they share no factors), then secondary hashing will succeed if there is an open space
+- If two keys collide in the hash table, then a secondary hash indicates the probing size.
+- Need to be careful, possible for infinite loops with a very empty array.
+- If the secondary hash value and the table size are coprime (they share no factors), then secondary hashing will succeed if there is an open space. This is why you want to use prime table size.
 - If table size is prime, only need to check if hash is a multiple
 
 --------------------------
 
 ## :star: Chaining :star:
 - Rather than probing for an open position, we could just save multiple objects in the same position
-- Some data structure is necessary here
-- Commonly: a linked list, AVL tree or secondary hash table.
-- Resizing isn’t necessary, but if you don’t, you will get O(n) runtime.
+- Some data structure is necessary here. Commonly: a linked list, AVL tree, or secondary hash table.
+- Resizing isn’t necessary once you have a secondary data structure, but if you don’t resize, you'll lose performance. The chains will get too lengthy for use to get contstant runtime. You will get O(n) runtime.
 
 <br>
 
@@ -612,11 +610,13 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 # MEMORY HIERARCHY
 
 ## :star: Memory is not uniformly accessible :star:
-- OS manages access to computer resources
-- Some memory is on disk and some is in cache
+- OS manages access to computer resources. This manages our access to the computer resources, such as memory, the disc, and the processor. Some of the memory we actually have is going to be on disc and some of that memory is in the cache where access are faster.
 - Dictated by two types of behavior
-  - Spatial locality – Items near each other are moved together (memory pages)
-  - Temporal locality – memory used recently will be used again
+  - Spatial locality – Items near each other are moved together (memory pages). This is the idea of the memory page that there are continuous 4K blocks of memory that always get moved to and from the disc together.
+  - Temporal locality – memory used recently will more likely be used again than memory that hasn't been used in while.
+- We can exploit these two things to improve our run times. 
+  - Going to disk is an incredibly costly operation. So even if we have great data structures designs, we could end up with a situation where our disc access actually becomes the majority of our time. The runtimes aren't the time-limiting factor. Instead, the physical time that we're waiting for the disc to spend into place now becomes what takes most of the time.
+  - So in order to limit the disk access when we have data that's really large and has to be stored on disc, we indroduced B-Trees (see next section).
 
 <br>
 

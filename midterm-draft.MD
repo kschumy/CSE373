@@ -315,7 +315,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - **Steps to describe doing an amortized analysis on the midterm:** 
   - Describe the state of the data structure at the beginning. (such as, “the array is full and has *n* elements”). 
   - Indicate the number of operations. (“Perform *n* insertions”). 
-  - Determine how many costly operations there are and how many cheap operation there is there are.
+  - Determine how many costly operations there are and how many cheap operations there is there are.
     - The reason that this is important is because the answer depends on these two. If the array is full and has *n* elements and then we add *n* more (provided that we're doubling the size of the array), we can restrict the fact that there is exactly one costly operation, i.e. exactly one resize.
   - Calculate amortized analysis...
 ```
@@ -323,14 +323,14 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――  =  ―――――――――――――――
                                 # of operations                                         # of operations
 ```
-- **Imporant to note**
-  - Amortized analysis is different than best case or worst case. It is a seperate type of analytical case.
-  - So far we've only seen examples where the cheap run time is constant, but be prepared for a non-constant cheap runtime on the midterm. Be able to apply the run times for that case. :triangular_flag_on_post:
+- **Important to note**
+  - Amortized analysis is different than best case or worst case. It is a separate type of analytical case.
+  - So far we've only seen examples where the cheap runtime is constant, but be prepared for a non-constant cheap runtime on the midterm. Be able to apply the run times for that case. :triangular_flag_on_post:
 
 --------------------------
 
 ## :star: Memory analysis :star: :question:
-- **Calculating how much memory an algorithm needs**, not for a data structure. **This is in addition to the data itself.** So if we have are data stored in AVL tree and we want to see how much memory it takes to do a recursive find, we don't include the data structure itself. 
+- **Calculating how much memory an algorithm needs**, not for a data structure. **This is in addition to the data itself.** So if we have our data stored in AVL tree and we want to see how much memory it takes to do a recursive find, we don't include the data structure itself. 
 - **Think about any secondary data structures you might use.**  If you have a queue and you're doing a breadth first search traversal, the Q is a secondary data structure that the algorithm itself requires. You want to consider how that data structure might be used, when it will be most full, and what elements are going to be in there.
 - **Also, remember that recursive functions consume memory on the call stack.**  When you have a recursive function, every time you call that recursive function you add another block on to the call stack. This consumes memory there, thus consuming extra memory. 
 
@@ -339,12 +339,12 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 ## :star: Basic Idea :star:
 - If we increase the size of the input by one, how does our total computation change?
 - Expect these and ideas related to them in the short answer section.
-- Timetime families
+- Runtime families
   - O(1): Input size has no effect on runtime
   - **O(log n)**: doubling the input increases the runtime by some constant amount
   - O(n): linear time, each additional input increases execution time by a constant amount
   - **O(n²)**: doubling the input increases the runtime by a factor of 4.
-    - Be able to described in a meaningful way how the runtime changes, specifically that to double the input increases the runtime by a factor of 4.
+    - Be able to describe in a meaningful way how the runtime changes, specifically that to double the input increases the runtime by a factor of 4.
   - O(2ⁿ): exponential, increasing the input by one doubles the runtime
 
 **[Back to top :rocket:](#overview)**
@@ -378,7 +378,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
   - All values (which are keys) in the left subtree must be less than the parent
   - All values (which are keys) in the right subtree must be greater than the parent
 - All, subtrees must also be binary search trees. With this property, all binary search trees have sorted in-order traversals. 
-- When implimenting with a dictionary...
+- When implementing with a dictionary...
   - Insert() and find() remain similar
   - Key is the primary comparison
   - Value is attached to the key
@@ -391,7 +391,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 ## :star: BSTs Height and Node Count :star:
 - Height of an empty tree = -1. Height of a single node = 0. 
 - Height = 1 + max(height(left),height(right)) 
-- With each increase in height, the number of nodes in a tree roughly doubles. This is where we start to get *log n* behavoir
+- With each increase in height, the number of nodes in a tree roughly doubles. This is where we start to get *log n* behaviour
 - Roughly half of a binary search tree are leaves
 - For a BST of height h: :question: is this section correct?
   - max # of leaves: 2ʰ ← perfect tree
@@ -418,7 +418,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Delete():
   - Some cases
     - The element is not in the data structure: don’t change the data, possibly throw an exception
-    - The key is a leaf in the tree: ermove the pointer to that node
+    - The key is a leaf in the tree: remove the pointer to that node
     - The node has one child: replace that node with its child
     - The node has two children: “delete” it by overwriting the node with a different <key, value> pair
       - In order to avoid changing the shape and doing too much work, it must be either the predecessor (the element just before it in sorted order) or the successor (the element just after it in sorted order).
@@ -469,13 +469,13 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 --------------------------
 
 ## :star: AVL Rotations :star:
-- AVL Rotations occur when an insertion makes a node out of balance. The rotation is preformed at the lowerst point of inbalance.
+- AVL Rotations occur when an insertion makes a node out of balance. The rotation is performed at the lowest point of imbalance.
 - The rotations are relative to the node that is unbalanced, with the rotation depending on which grandchild received the new node.
 - Four types of rotations
   - Left-left and right-right rotations involve the child of the affected node being rotated up into position
   - Left-right and right-left rotations involve the grandchild being rotated up into position. The grandparent and parent become the two children.
 - It is important that these rotations preserve BST property.
-- Futher explaination of this
+- Further explanation of this
   - 
   - http://btechsmartclass.com/DS/U5_T2.html
 
@@ -487,11 +487,11 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 # HASH TABLES
 
 ## :star: Properties :star:
-- A large data set M with a smaller set that should be saved, D
+- A large dataset M with a smaller set that should be saved, D
 - A hash function maps M onto D
   - It should run in O(1) time
   - It should distribute into all of the available spots evenly
-- Hashtables provide O(1) runtime IF
+- Hash tables provide O(1) runtime IF
   - Collisions are not a problem
   - Decrease the chance of collisions by increasing the amount of memory (load factor)
     - Resizing is costly
@@ -658,7 +658,7 @@ Lazy delete for Sorted Array
 A general technique for making delete as fast as find: Instead of actually removing the item just mark it deleted
 
 Plusses:  
-- Simpler to delete (no shifting). If element is re-added soon afterwards, simple to insert it again (no shifting)
+- Simpler to delete (no shifting). If element is re-added soon afterward, simple to insert it again (no shifting)
 - Can control removals and do them later in batches (amortized cost)
 
 Minuses:  

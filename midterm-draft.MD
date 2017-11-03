@@ -55,10 +55,7 @@
   - Draw a tree with a bunch of insertions and then at the end produce the array form. 
 
 <br>  
-
 **[Back to top :rocket:](#overview)**  
-
-<br>  
 
 --------------------------
 --------------------------

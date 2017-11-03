@@ -54,9 +54,10 @@
   - Percolate up, percolate down and represent in both tree and array form
   - Draw a tree with a bunch of insertions and then at the end produce the array form. 
 
+--------------------------
+
 **[Back to top :rocket:](#overview)**
 
---------------------------
 --------------------------
 
 # DEFINITIONS

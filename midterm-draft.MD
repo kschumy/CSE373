@@ -10,18 +10,18 @@
 --------------------------
 
 ## :star: Topics :star:
-- [Definitions](#definitions)
-- [Stacks and Queues](#stacks-and-queues)
-- [Runtime Analysis](#runtime-analysis)
-- [Dictionaries](#dictionaries)
-- [BSTs](#bsts)
-- [Traversals](#traversals)
-- [AVL Trees](#avl-trees)
-- [Hash Tables](#hash-tables)
-- [Memory Hierarchy](#memory-hierarchy)
-- [B+-trees](#b+-trees)
-- [Priority Queues](##priority-queues-adt)
-- [Heaps](#heaps)
+[Definitions](#definitions)  
+[Stacks and Queues](#stacks-and-queues)  
+[Runtime Analysis](#runtime-analysis)  
+[Dictionaries](#dictionaries)  
+[BSTs](#bsts)  
+[Traversals](#traversals)  
+[AVL Trees](#avl-trees)  
+[Hash Tables](#hash-tables)  
+[Memory Hierarchy](#memory-hierarchy)  
+[B+-trees](#b+-trees)  
+[Priority Queues](##priority-queues-adt)  
+[Heaps](#heaps)
 
 --------------------------
 
@@ -56,6 +56,7 @@
 
 **[Back to top :rocket:](#overview)**
 
+--------------------------
 --------------------------
 
 # DEFINITIONS
@@ -159,7 +160,7 @@
   - peek: top() and front()
 - **This isn’t sufficient to distinguish them, their behavior is also a critical part of their ADT. FIFO v LIFO**
 
-――――――――――――――――――――――――――――――――――――――――――――――――――――
+--------------------------
 
 ## :star: Data structure choices :star:
 - Arrays and Linked Lists
@@ -174,6 +175,7 @@
 
 **[Back to top :rocket:](#overview)**
 
+--------------------------
 --------------------------
 
 # RUNTIME ANALYSIS
@@ -323,7 +325,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
   - Amortized analysis is different than best case or worst case. It is a seperate type of analytical case.
   - So far we've only seen examples where the cheap run time is constant, but be prepared for a non-constant cheap runtime on the midterm. Be able to apply the run times for that case. :triangular_flag_on_post:
 
-―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+--------------------------
 
 ## :star: Memory analysis :star: :question:
 - **Calculating how much memory an algorithm needs**, not for a data structure. **This is in addition to the data itself.** So if we have are data stored in AVL tree and we want to see how much memory it takes to do a recursive find, we don't include the data structure itself. 
@@ -346,6 +348,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 **[Back to top :rocket:](#overview)**
 
 --------------------------
+--------------------------
 
 # DICTIONARIES
 
@@ -362,6 +365,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 
 **[Back to top :rocket:](#overview)**
 
+--------------------------
 --------------------------
 
 # BSTs
@@ -423,6 +427,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 **[Back to top :rocket:](#overview)**
 
 --------------------------
+--------------------------
 
 # TRAVERSALS
 
@@ -444,6 +449,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 **[Back to top :rocket:](#overview)**
 
 --------------------------
+--------------------------
 
 # AVL TREES
 
@@ -461,15 +467,19 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 --------------------------
 
 ## :star: AVL Rotations :star:
-- AVL Rotations occur when an insertion makes a node out of balance
-- The rotations are relative to the node that is unbalanced, there are four rotations depending on which grandchild received the new node.
-- Four types of rotations (all are relative to the node that is unbalanced, there are four rotations depending on which grandchild received the new node.
-- Left-left and right-right rotations involve the child of the affected node being rotated up into position
-- Left-right and right-left rotations involve the grandchild being rotated up into position. The grandparent and parent become the two children
-- It is important that these rotations preserve BST property
+- AVL Rotations occur when an insertion makes a node out of balance. The rotation is preformed at the lowerst point of inbalance.
+- The rotations are relative to the node that is unbalanced, with the rotation depending on which grandchild received the new node.
+- Four types of rotations
+  - Left-left and right-right rotations involve the child of the affected node being rotated up into position
+  - Left-right and right-left rotations involve the grandchild being rotated up into position. The grandparent and parent become the two children.
+- It is important that these rotations preserve BST property.
+- Futher explaination of this
+  - 
+  - http://btechsmartclass.com/DS/U5_T2.html
 
 **[Back to top :rocket:](#overview)**
 
+--------------------------
 --------------------------
 
 # HASH TABLES
@@ -523,6 +533,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 **[Back to top :rocket:](#overview)**
 
 --------------------------
+--------------------------
 
 # MEMORY HIERARCHY
 
@@ -535,6 +546,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 
 **[Back to top :rocket:](#overview)**
 
+--------------------------
 --------------------------
 
 # B+-TREES
@@ -559,6 +571,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 
 **[Back to top :rocket:](#overview)**
 
+--------------------------
 --------------------------
 
 # HEAPS

@@ -204,6 +204,45 @@
 
 --------------------------
 
+## :star: Algorithm (applied to an array) :star:
+|Algorithm (applied to an array)|Best case|Worst case|  
+|-------------------------------|:---------:|:----------:|  
+|Bubble Sort|O(n)|O(n<sup>2</sup>)|
+|Selection Sort|O(n<sup>2</sup>)|O(n<sup>2</sup>)|
+|Insertion Sort|O(n)|O(n<sup>2</sup>)|
+|Merge Sort|O(n log n)|O(n log n)|
+|Quick Sort|O(n log n)|O(n<sup>2</sup>)|
+
+--------------------------
+
+## :star: Data Structure (no trees) - All are worst case :star:
+### All are worst case
+|Data Structure (no trees)|Access|Find|Insert|Delete|
+|-------------------------|:----:|:--:|:----:|:----:|
+|Array|O(1)|O(n)|O(n)|O(n)|
+|Stack|O(n)|O(n)|O(1)|O(1)|
+|Queue|O(n)|O(n)|O(1)|O(1)|
+|Singly-Linked List|O(n)|O(n)|O(1)|O(1)|
+|Doubly-Linked List|O(n)|O(n)|O(1)|O(1)|
+|Skip List|O(n)|O(n)|O(n)|O(n)|
+|Hash Table|---|O(n)|O(n)|O(n)|
+
+--------------------------
+
+## :star: Data Structure (trees) :star:
+### All are worst case
+|Data Structure (trees)|Access|Find|Insert|Delete|
+|----------------------|:----:|:--:|:----:|:----:|
+|Binary Search Tree|O(n)|O(n)|O(n)|O(n)|
+|Cartesian Tree|---|O(n)|O(n)|O(n)|
+|B-Tree|O(log n)|O(log n)|O(log n)|O(log n)|
+|Red-Black Tree|O(log n)|O(log n)|O(log n)|O(log n)|
+|Splay Tree|---|O(log n)|O(log n)|O(log n)|
+|AVL Tree|O(log n)|O(log n)|O(log n)|O(log n)|
+|KD Tree|O(n)|O(n)|O(n)|O(n)|
+
+--------------------------
+
 ## :star: Important Summations :star: 
 Name | Formula |
 ---- | --------- |

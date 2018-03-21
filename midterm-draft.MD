@@ -20,7 +20,7 @@
 [Hash Tables](#hash-tables)  
 [Memory Hierarchy](#memory-hierarchy)  
 [B+-trees](#b+-trees)  
-[Priority Queues](##priority-queues-adt)  
+[Priority Queues](#priority-queues-adt)  
 [Heaps](#heaps)
 
 --------------------------
@@ -214,6 +214,8 @@
 |Merge Sort|O(n log n)|O(n log n)|
 |Quick Sort|O(n log n)|O(n<sup>2</sup>)|
 
+--------------------------
+
 ### Data Structure (no trees) - All are worst case
 |Data Structure (no trees)|Access|Find|Insert|Delete|
 |-------------------------|:----:|:--:|:----:|:----:|
@@ -224,6 +226,8 @@
 |Doubly-Linked List|O(n)|O(n)|O(1)|O(1)|
 |Skip List|O(n)|O(n)|O(n)|O(n)|
 |Hash Table|---|O(n)|O(n)|O(n)|
+
+--------------------------
 
 ### Data Structure (trees)
 

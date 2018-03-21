@@ -204,7 +204,8 @@
 
 --------------------------
 
-## :star: Algorithm (applied to an array) :star:
+## :star: Runtimes :star:
+### Algorithm (applied to an array)
 |Algorithm (applied to an array)|Best case|Worst case|  
 |-------------------------------|:---------:|:----------:|  
 |Bubble Sort|O(n)|O(n<sup>2</sup>)|
@@ -213,10 +214,7 @@
 |Merge Sort|O(n log n)|O(n log n)|
 |Quick Sort|O(n log n)|O(n<sup>2</sup>)|
 
---------------------------
-
-## :star: Data Structure (no trees) - All are worst case :star:
-### All are worst case
+### Data Structure (no trees) - All are worst case
 |Data Structure (no trees)|Access|Find|Insert|Delete|
 |-------------------------|:----:|:--:|:----:|:----:|
 |Array|O(1)|O(n)|O(n)|O(n)|
@@ -227,10 +225,8 @@
 |Skip List|O(n)|O(n)|O(n)|O(n)|
 |Hash Table|---|O(n)|O(n)|O(n)|
 
---------------------------
+### Data Structure (trees)
 
-## :star: Data Structure (trees) :star:
-### All are worst case
 |Data Structure (trees)|Access|Find|Insert|Delete|
 |----------------------|:----:|:--:|:----:|:----:|
 |Binary Search Tree|O(n)|O(n)|O(n)|O(n)|

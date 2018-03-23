@@ -112,7 +112,7 @@
 
 --------------------------
 
-## :heavy_plus_sign: Testingn :heavy_plus_sign: 
+## :heavy_plus_sign: Testing :heavy_plus_sign: 
 - **Two primary types of testing**  
   - Black box
     - Behavior only, no peeking into the code
@@ -267,7 +267,7 @@ Name | Formula |
 
 --------------------------
 
-## :star: Recurrences :star:
+## :star: Recursion :star:
 **:question: this whole section :question:**
 
 ### :small_blue_diamond: Steps :small_blue_diamond: 
@@ -434,7 +434,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 ## :star: BSTs Height and Node Count :star:
 - Height of an empty tree = -1. Height of a single node = 0. 
 - Height = 1 + max(height(left),height(right)) 
-- With each increase in height, the number of nodes in a tree roughly doubles. This is where we start to get *log n* behaviour
+- With each increase in height, the number of nodes in a tree roughly doubles. This is where we start to get *log n* behavior
 - Roughly half of a binary search tree are leaves
 - For a BST of height h: :question: is this section correct?
   - max # of leaves: 2ʰ ← perfect tree
@@ -601,7 +601,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - We want our hash function to do the following:
   - **Be repeatable** ← You need to be able to re-access the data. 
   - **Be equally distributed** ← Too much clustering hinders ability to run in constant time.  
-  - **Run in constant time**  ← Want it to be fast. Handling collisions is important to maintining this. 
+  - **Run in constant time**  ← Want it to be fast. Handling collisions is important to maintaining this. 
   - Return an integer (which often is modded by the table size to ensure it'll fit.
   - Needs to incorporate all the data in the keys
 - Examples of likely bad hash functions (assuming nothing unusual about these situations)
@@ -617,7 +617,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 - Increase the index by one until a spot is found
 - Guaranteed to find a spot if it is available
 - If the array is too full, its operations reach O(n) time. 
-  - **Primary clustering**: overlapping keys clustered together. Mulitple different keys are interferring with each other.
+  - **Primary clustering**: overlapping keys clustered together. Mulitple different keys are interfering with each other.
 
 ### :small_blue_diamond: Quadratic Probing :small_blue_diamond: 
 - Rather than increasing by one each time, we increase by the squares
@@ -628,7 +628,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 
 ### :small_blue_diamond: Secondary Hashing :small_blue_diamond: 
 - If two keys collide in the hash table, then a secondary hash indicates the probing size.
-- Need to be careful, possible for infinite loops with a very empty array.
+- Need to be careful, possible for infinite loops with a near empty array.
 - If the secondary hash value and the table size are coprime (they share no factors), then secondary hashing will succeed if there is an open space. This is why you want to use prime table size.
 - If table size is prime, only need to check if hash is a multiple
 
@@ -637,7 +637,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
 ## :star: Chaining :star:
 - Rather than probing for an open position, we could just save multiple objects in the same position
 - Some data structure is necessary here. Commonly: a linked list, AVL tree, or secondary hash table.
-- Resizing isn’t necessary once you have a secondary data structure, but if you don’t resize, you'll lose performance. The chains will get too lengthy for use to get contstant runtime. You will get O(n) runtime.
+- Resizing isn’t necessary once you have a secondary data structure, but if you don’t resize, you'll lose performance. The chains will get too lengthy for use to get consistent runtime. You will get O(n) runtime.
 
 <br>
 
@@ -655,7 +655,7 @@ T(n) = 3c₀ + c₁*(n+(n-1)+(n-2)) + T(n-3)
   - Temporal locality – memory used recently will more likely be used again than memory that hasn't been used in while.
 - We can exploit these two things to improve our run times. 
   - Going to disk is an incredibly costly operation. So even if we have great data structures designs, we could end up with a situation where our disc access actually becomes the majority of our time. The runtimes aren't the time-limiting factor. Instead, the physical time that we're waiting for the disc to spend into place now becomes what takes most of the time.
-  - So in order to limit the disk access when we have data that's really large and has to be stored on disc, we indroduced B-Trees (see next section).
+  - So in order to limit the disk access when we have data that's really large and has to be stored on disc, we introduced B-Trees (see next section).
 
 <br>
 
